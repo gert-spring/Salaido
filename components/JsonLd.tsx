@@ -12,7 +12,7 @@ export function JsonLd() {
     "@id": `${site.url}/#organization`,
     name: site.name,
     url: site.url,
-    logo: `${site.url}/brand/salaido-logo.svg`,
+    logo: `${site.url}/brand/salaido-logo.png`,
     description: en.meta.description,
     slogan: "Process beyond imagination",
     areaServed: "Europe",

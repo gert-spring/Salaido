@@ -8,9 +8,9 @@ export type Asset = { src: string; width: number; height: number; position?: str
 
 export const assets = {
   salaidoLogo: {
-    // From the Salaido design system (Assets > Logos). Navy variant also in /public/brand.
-    onDark: { src: "/brand/salaido-logo-white.svg", width: 926, height: 290 } as Asset,
-    onLight: { src: "/brand/salaido-logo.svg", width: 926, height: 290 } as Asset,
+    // Supplied 23 Nov 2026 (PNG, transparent, trimmed). The older design-system SVGs stay in /public/brand.
+    onDark: { src: "/brand/salaido-logo-white.png", width: 1744, height: 534 } as Asset,
+    onLight: { src: "/brand/salaido-logo.png", width: 1744, height: 534 } as Asset,
   },
   datalaneLogo: {
     // From the "Salaido × Datalane at Celosphere 2026" design. PNG; swap for SVG if Datalane supplies one.

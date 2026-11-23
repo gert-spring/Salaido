@@ -25,12 +25,12 @@ export default async function OpengraphImage() {
   const pub = join(process.cwd(), "public", "brand");
   const [eye, logo, regular, bold] = await Promise.all([
     readFile(join(pub, "helix-nebula.jpg")),
-    readFile(join(pub, "salaido-logo-white.svg")),
+    readFile(join(pub, "salaido-logo-white.png")),
     loadSerif(400),
     loadSerif(600),
   ]);
   const eyeSrc = `data:image/jpeg;base64,${eye.toString("base64")}`;
-  const logoSrc = `data:image/svg+xml;base64,${logo.toString("base64")}`;
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
   const fonts = [
     ...(regular ? [{ name: "Serif", data: regular, weight: 400 as const }] : []),
     ...(bold ? [{ name: "Serif", data: bold, weight: 600 as const }] : []),
@@ -54,7 +54,7 @@ export default async function OpengraphImage() {
         />
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 72, position: "relative" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={logoSrc} alt="" width={210} height={66} />
+          <img src={logoSrc} alt="" width={230} height={70} />
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ display: "flex", fontFamily: "Serif", fontSize: 120, color: "#FFFFFF", lineHeight: 1, letterSpacing: -3 }}>
               <span>Imagine&nbsp;</span>
