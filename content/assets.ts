@@ -42,7 +42,9 @@ export const assets = {
     },
   },
   industries: {
-    highTech: null as Asset, // e.g. { src: "/industries/high-tech.jpg", width: 1600, height: 1200 }
+    // Cleanroom with lithography system. The full image shows ASML branding; the 4:5 card crop keeps only
+    // the centre (machine), so no logos show. Keep the crop, and check usage rights before go-live.
+    highTech: { src: "/industries/high-tech.webp", width: 1672, height: 941 } as Asset,
     cpg: null as Asset,
     banking: null as Asset,
   },
