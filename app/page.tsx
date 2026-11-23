@@ -7,6 +7,7 @@ import { Partners } from "@/components/sections/Partners";
 import { Industries } from "@/components/sections/Industries";
 import { Ambition } from "@/components/sections/Ambition";
 import { Celosphere } from "@/components/sections/Celosphere";
+import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 
 // Section order follows BUILD_PLAN section 4.
@@ -23,6 +24,7 @@ export default function Home() {
         <Industries />
         <Ambition />
         <Celosphere />
+        <Contact />
       </main>
       <Footer />
     </>

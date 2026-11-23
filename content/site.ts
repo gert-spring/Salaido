@@ -28,7 +28,7 @@ export const site = {
     startDate: "2026-12-01",
     endDate: "2026-12-03",
     // [deliver: booth number from Celonis]
-    booth: "[number]",
+    booth: "13",
   },
 };
 

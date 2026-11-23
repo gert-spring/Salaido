@@ -27,7 +27,7 @@ export function Logo({
         width={asset.width}
         height={asset.height}
         alt={name}
-        className={`h-7 w-auto ${className}`}
+        className={`${brand === "salaido" ? "h-10" : "h-7"} w-auto ${className}`}
         priority={brand === "salaido"}
       />
     );

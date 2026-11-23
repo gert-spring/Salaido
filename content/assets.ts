@@ -7,14 +7,17 @@ export type Asset = { src: string; width: number; height: number } | null;
 
 export const assets = {
   salaidoLogo: {
-    onDark: null as Asset, // e.g. { src: "/brand/salaido-logo-white.svg", width: 160, height: 40 }
-    onLight: null as Asset, // e.g. { src: "/brand/salaido-logo.svg", width: 160, height: 40 }
+    // From the Salaido design system (Assets > Logos). Navy variant also in /public/brand.
+    onDark: { src: "/brand/salaido-logo-white.svg", width: 926, height: 290 } as Asset,
+    onLight: { src: "/brand/salaido-logo.svg", width: 926, height: 290 } as Asset,
   },
   datalaneLogo: {
     onDark: null as Asset, // e.g. { src: "/brand/datalane-logo-white.svg", width: 160, height: 40 }
     onLight: null as Asset, // e.g. { src: "/brand/datalane-logo.svg", width: 160, height: 40 }
   },
-  eyeHero: null as Asset, // e.g. { src: "/brand/eye-hero.jpg", width: 2400, height: 2400 }
+  // Design system (Assets > Beeld): helix-nebula.jpg, "the eye of the universe".
+  // Swap for the stand's eye/iris image when Futurama delivers it.
+  eyeHero: { src: "/brand/helix-nebula.jpg", width: 1622, height: 912 } as Asset,
   partners: {
     // [deliver + check usage rules on each partner brand portal]
     celonis: null as Asset, // e.g. { src: "/partners/celonis.svg", width: 160, height: 40 }
