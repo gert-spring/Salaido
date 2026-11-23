@@ -27,7 +27,7 @@ export const site = {
     city: "Munich",
     startDate: "2026-12-01",
     endDate: "2026-12-03",
-    // [deliver: booth number from Celonis]
+    // Confirmed 23 Nov 2026
     booth: "13",
   },
 };
