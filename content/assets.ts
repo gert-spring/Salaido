@@ -46,7 +46,7 @@ export const assets = {
     // the centre (machine), so no logos show. Keep the crop, and check usage rights before go-live.
     highTech: { src: "/industries/high-tech.webp", width: 1672, height: 941 } as Asset,
     cpg: null as Asset,
-    banking: null as Asset,
+    banking: { src: "/industries/banking.webp", width: 1672, height: 941 } as Asset,
   },
   europeMap: null as Asset, // optional, e.g. { src: "/brand/europe-map.svg", width: 1200, height: 1000 }
 };
