@@ -10,7 +10,7 @@ import { SectionHeading, Split } from "@/components/ui/SectionHeading";
 export function Datalane() {
   const t = en.datalane;
   return (
-    <section id="datalane" aria-labelledby="datalane-heading" className="on-light bg-cream py-24 text-graphite sm:py-32 lg:py-40">
+    <section id="datalane" aria-labelledby="datalane-heading" className="on-light bg-cream pb-10 pt-24 text-graphite sm:pb-12 sm:pt-32 lg:pb-16 lg:pt-40">
       <Container>
         <Split
           tone="light"

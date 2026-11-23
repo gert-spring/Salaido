@@ -19,7 +19,7 @@ export function Industries() {
     <section
       id="industries"
       aria-labelledby="industries-heading"
-      className="bg-navy py-24 sm:py-32 lg:py-40"
+      className="bg-navy pb-10 pt-24 sm:pb-12 sm:pt-32 lg:pb-16 lg:pt-40"
     >
       <Container>
         <Split

@@ -15,7 +15,7 @@ export function Problem() {
   if (!src) return null;
 
   return (
-    <section id="why" aria-labelledby="why-heading" className="bg-navy pb-16 pt-24 sm:pb-24 sm:pt-32 lg:pb-28 lg:pt-40">
+    <section id="why" aria-labelledby="why-heading" className="bg-navy pb-10 pt-24 sm:pb-12 sm:pt-32 lg:pb-16 lg:pt-40">
       <Container>
         <Reveal>
           <h2

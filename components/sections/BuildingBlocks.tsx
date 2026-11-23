@@ -10,7 +10,7 @@ const BLOCK = ["bg-beyond", "bg-yellow", "bg-green", "bg-red"];
 export function BuildingBlocks() {
   const t = en.blocks;
   return (
-    <section id="what-we-do" aria-labelledby="what-we-do-heading" className="bg-navy py-24 sm:py-32 lg:py-40">
+    <section id="what-we-do" aria-labelledby="what-we-do-heading" className="bg-navy pb-24 pt-10 sm:pb-32 sm:pt-12 lg:pb-40 lg:pt-16">
       <Container>
         <Split
           align="end"
