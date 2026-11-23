@@ -159,7 +159,7 @@ export const en = {
   ambition: {
     eyebrow: "Our ambition",
     heading: "Building Europe's leading partner for **Process Intelligence and AI**",
-    body: "Together with Celonis, Microsoft and Databricks, we are building a European platform, one strong local company at a time, with entrepreneurship and local presence as deliberate choices.",
+    body: "We are building a leading European platform for Process Intelligence, Data Engineering, AI execution and application modernisation, one strong local company at a time, with entrepreneurship and local presence as deliberate choices.",
     // Optional partner-recruitment line. Set `show: true` only after confirmation.
     joinLine: {
       show: true,
