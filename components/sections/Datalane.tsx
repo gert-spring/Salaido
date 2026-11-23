@@ -1,6 +1,7 @@
 import { en } from "@/content/en";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { Logo } from "@/components/ui/Logo";
 import { Reveal } from "@/components/ui/Reveal";
 import { Rich } from "@/components/ui/Rich";
 import { SectionHeading, Split } from "@/components/ui/SectionHeading";
@@ -19,8 +20,10 @@ export function Datalane() {
             </Reveal>
           }
           right={
-            <Reveal delay={0.08} className="lg:pt-10">
-              <p className="text-lg leading-relaxed">
+            <Reveal delay={0.08}>
+              {/* The name people know, shown as the brand they know it by. */}
+              <Logo brand="datalane" on="light" className="h-10! sm:h-12!" />
+              <p className="mt-8 text-lg leading-relaxed">
                 <Rich text={t.body} />
               </p>
               <p className="mt-6 font-serif text-xl font-semibold leading-snug text-navy sm:text-2xl">

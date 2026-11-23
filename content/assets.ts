@@ -12,8 +12,9 @@ export const assets = {
     onLight: { src: "/brand/salaido-logo.svg", width: 926, height: 290 } as Asset,
   },
   datalaneLogo: {
-    onDark: null as Asset, // e.g. { src: "/brand/datalane-logo-white.svg", width: 160, height: 40 }
-    onLight: null as Asset, // e.g. { src: "/brand/datalane-logo.svg", width: 160, height: 40 }
+    // From the "Salaido × Datalane at Celosphere 2026" design. PNG; swap for SVG if Datalane supplies one.
+    onDark: { src: "/brand/datalane-logo-white.png", width: 1264, height: 274 } as Asset,
+    onLight: { src: "/brand/datalane-logo.png", width: 1264, height: 274 } as Asset,
   },
   // Design system (Assets > Beeld): helix-nebula.jpg, "the eye of the universe".
   // Swap for the stand's eye/iris image when Futurama delivers it.
