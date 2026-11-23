@@ -40,7 +40,7 @@ export const site = {
       "756", // Switzerland
       "040", // Austria
     ],
-    // Middle tier: next countries.
+    // Also highlighted (same colour as focus on the map; kept as a separate list in case tiers return).
     next: [
       "056", // Belgium
       "442", // Luxembourg

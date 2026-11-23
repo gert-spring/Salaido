@@ -22,7 +22,7 @@ const FRAME = { west: -10.8, east: 32, south: 35.8, north: 71.3 };
 
 const TONE = {
   focus: "#F5F3ED", // cream: the countries that matter, at full strength
-  next: "#8C97AD", // slate, clearly secondary
+  next: "#F5F3ED", // same cream as focus: all highlighted countries read as one group
   rest: "#172946", // barely above the background: context only
   border: "#101E35", // section background: borders read as thin gaps
 };
