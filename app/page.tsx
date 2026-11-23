@@ -3,8 +3,13 @@ import { Hero } from "@/components/sections/Hero";
 import { Problem } from "@/components/sections/Problem";
 import { BuildingBlocks } from "@/components/sections/BuildingBlocks";
 import { Datalane } from "@/components/sections/Datalane";
+import { Partners } from "@/components/sections/Partners";
+import { Industries } from "@/components/sections/Industries";
+import { Ambition } from "@/components/sections/Ambition";
+import { Celosphere } from "@/components/sections/Celosphere";
 import { Footer } from "@/components/sections/Footer";
 
+// Section order follows BUILD_PLAN section 4.
 export default function Home() {
   return (
     <>
@@ -14,6 +19,10 @@ export default function Home() {
         <Problem />
         <BuildingBlocks />
         <Datalane />
+        <Partners />
+        <Industries />
+        <Ambition />
+        <Celosphere />
       </main>
       <Footer />
     </>

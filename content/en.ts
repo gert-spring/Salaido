@@ -241,6 +241,7 @@ export const en = {
     europeMap: "Map of Europe (placeholder)",
     industryPhoto: "photo (placeholder)",
     logo: "logo placeholder",
+    logoShort: "logo",
   },
 } as const;
 
