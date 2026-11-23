@@ -35,7 +35,7 @@ export function SplitHeadline({
           <Rich text={left} />
         </span>
       </span>
-      <span className="justify-self-start whitespace-nowrap pl-[0.12em]">
+      <span className="justify-self-start whitespace-nowrap pl-[0.3em]">
         <Rich text={right} boldClassName="font-bold" />
       </span>
     </Tag>
