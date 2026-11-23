@@ -28,7 +28,7 @@ export function Problem() {
           <span aria-hidden className="mx-auto mt-10 block h-16 w-px bg-cream/25 lg:mt-14 lg:h-20" />
         </Reveal>
         <Reveal delay={0.08}>
-          <BrandVideo src={src} label={t.video.label} playLabel={t.video.play} />
+          <BrandVideo src={src} labels={t.video} />
         </Reveal>
       </Container>
     </section>

@@ -22,8 +22,6 @@ export const en = {
   nav: {
     label: "Main",
     items: [
-      { label: "Why", href: "#why" },
-      { label: "What we do", href: "#what-we-do" },
       { label: "Datalane", href: "#datalane" },
       { label: "Partners", href: "#partners" },
       { label: "Industries", href: "#industries" },
@@ -55,6 +53,10 @@ export const en = {
     video: {
       label: "Salaido brand intro, 60 seconds",
       play: "Play the Salaido brand intro",
+      pause: "Pause",
+      mute: "Sound off",
+      unmute: "Sound on",
+      seek: "Seek in the brand intro",
     },
     eyebrow: "Why process intelligence",
     heading: "Who actually sees **how work gets done?**",
