@@ -20,10 +20,11 @@ export type BrandVideoLabels = {
  * - No native controls, so there is no browser download menu; right-click is disabled on the video.
  *   This deters casual saving only: a file served to a browser can always be captured.
  */
-export function BrandVideo({ src, labels }: { src: string; labels: BrandVideoLabels }) {
+export function BrandVideo({ src, labels, stillAt = 0 }: { src: string; labels: BrandVideoLabels; stillAt?: number }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const fillRef = useRef<HTMLDivElement>(null);
   const hideTimer = useRef<number | undefined>(undefined);
+  const startedRef = useRef(false);
 
   const [started, setStarted] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -50,9 +51,20 @@ export function BrandVideo({ src, labels }: { src: string; labels: BrandVideoLab
 
   useEffect(() => () => window.clearTimeout(hideTimer.current), []);
 
+  // Metadata can load before hydration attaches onLoadedMetadata: park on the still here too.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (v && v.readyState >= 1 && !startedRef.current && stillAt > 0) v.currentTime = stillAt;
+  }, [stillAt]);
+
   const play = useCallback(() => {
     const v = videoRef.current;
     if (!v) return;
+    // The still shows a frame from mid-film; the first play always starts from the beginning.
+    if (!startedRef.current) {
+      startedRef.current = true;
+      v.currentTime = 0;
+    }
     setStarted(true);
     v.play().catch(() => {});
   }, []);
@@ -103,15 +115,24 @@ export function BrandVideo({ src, labels }: { src: string; labels: BrandVideoLab
       <video
         ref={videoRef}
         className="block aspect-video w-full"
-        src={`${src}#t=0.5`}
+        src={src}
         preload="metadata"
+        // Before the first play, park on the chosen still frame (no darkening overlay).
+        onLoadedMetadata={(e) => {
+          if (!startedRef.current && stillAt > 0) e.currentTarget.currentTime = stillAt;
+        }}
         playsInline
         aria-label={labels.label}
         controlsList="nodownload noplaybackrate noremoteplayback"
         disablePictureInPicture
         disableRemotePlayback
         onClick={() => started && toggle()}
-        onPlay={() => {
+        onPlay={(e) => {
+          // Playback started some other way (e.g. media keys): still start from the beginning.
+          if (!startedRef.current) {
+            startedRef.current = true;
+            e.currentTarget.currentTime = 0;
+          }
           setStarted(true);
           setPlaying(true);
         }}
@@ -129,7 +150,7 @@ export function BrandVideo({ src, labels }: { src: string; labels: BrandVideoLab
           type="button"
           onClick={play}
           aria-label={labels.play}
-          className="group absolute inset-0 flex items-center justify-center bg-navy/30 transition-colors duration-200 hover:bg-navy/10"
+          className="group absolute inset-0 flex items-center justify-center"
         >
           <span className="flex h-20 w-20 items-center justify-center rounded-full border border-cream/80 bg-navy/60 backdrop-blur-sm transition-transform duration-150 ease-out group-hover:scale-105 group-active:scale-[0.97] sm:h-24 sm:w-24">
             <PlayIcon className="ml-1 h-7 w-7" />

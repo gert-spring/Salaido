@@ -26,6 +26,8 @@ export const assets = {
     heroIris: "/video/salaido-iris.mp4" as string | null,
     // 60-second brand intro, replaces the "Why process intelligence" block.
     brandIntro: "/video/salaido-brand-intro.mp4" as string | null,
+    // Frame (seconds) shown as the still before the first play.
+    brandIntroStillAt: 17,
   },
   partners: {
     // Delivered 23 Nov 2026. [check usage rules on each partner brand portal]
