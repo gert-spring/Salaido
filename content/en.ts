@@ -207,16 +207,16 @@ export const en = {
     companyLine: "Datalane is a Salaido company",
     copyright: "© 2026 Salaido",
     privacy: "Privacy",
-    // DRAFT privacy statement. Have it checked before go-live; fill the [bracketed] facts.
+    // Privacy statement (general). Have it checked before go-live. Processors: Vercel (hosting,
+    // analytics) and Resend (email), both US-based, DPF-certified, SCCs in their DPAs (checked 23 Nov 2026).
     privacyStatement: {
       heading: "Privacy statement",
       paragraphs: [
-        "[Legal entity name], trading as Salaido, is responsible for the personal data collected through this website. [Registered address, Chamber of Commerce number]",
-        "When you use the contact form, we use your name, company, email address and message only to answer your request and, if you ask for it, to follow up. Our legal basis is your consent, which you give with the checkbox on the form and can withdraw at any time.",
-        "We do not sell your details or use them for marketing without asking. They are shared only with the service providers that host this website (Vercel) and deliver our email (Resend), who process them on our behalf. [Confirm: these providers may process data outside the EU under standard contractual clauses.]",
-        "We keep contact requests no longer than needed to follow up, and at most [retention period, e.g. 12 months].",
-        "This website uses cookieless, anonymous visitor statistics (Vercel Web Analytics). It sets no tracking cookies and does not identify you.",
-        "You can ask to see, correct or delete your details, or object to their use, by emailing {email}. You can also lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens).",
+        "Salaido Group BV (Chamber of Commerce number 42046966) is responsible for the personal data processed through this website.",
+        "We only use the details you share with us to respond to your request and to follow up on it. We do this with your consent, which you can withdraw at any time.",
+        "We do not sell your details. We share them only with trusted service providers that support this website, such as hosting and email delivery. Some of these providers are based in the United States; those transfers are covered by the EU-U.S. Data Privacy Framework and the European Commission's standard contractual clauses.",
+        "We keep your details no longer than necessary, and at most 12 months.",
+        "This website uses anonymous visitor statistics without tracking cookies.",
       ],
       updated: "Last updated: 23 November 2026",
     },
