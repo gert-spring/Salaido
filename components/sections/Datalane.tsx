@@ -13,6 +13,7 @@ export function Datalane() {
     <section id="datalane" aria-labelledby="datalane-heading" className="on-light bg-cream pb-10 pt-24 text-graphite sm:pb-12 sm:pt-32 lg:pb-16 lg:pt-40">
       <Container>
         <Split
+          line
           tone="light"
           left={
             <Reveal>

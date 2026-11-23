@@ -27,8 +27,6 @@ export function Hero() {
       {/* Keeps white type readable over the moving image. */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-navy/45" />
       <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-navy to-transparent" />
-      {/* The split: full height, through the centre of the eye. */}
-      <span aria-hidden className="split-draw pointer-events-none absolute inset-y-0 left-1/2 -z-10 hidden w-px bg-cream/20 lg:block" />
 
       <Container className="flex min-h-[100svh] flex-col justify-center pb-20 pt-32 lg:pb-24 lg:pt-32">
         <SplitHeadline

@@ -24,8 +24,6 @@ export function Problem() {
           >
             <Rich text={t.promise} boldClassName="font-bold" />
           </h2>
-          {/* The split, continuing from the hero down into the film. */}
-          <span aria-hidden className="mx-auto mt-10 block h-16 w-px bg-cream/25 lg:mt-14 lg:h-20" />
         </Reveal>
         <Reveal delay={0.08}>
           <BrandVideo src={src} labels={t.video} stillAt={assets.video.brandIntroStillAt} />

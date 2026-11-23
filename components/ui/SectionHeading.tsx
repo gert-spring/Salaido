@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Eyebrow } from "./Eyebrow";
 import { Rich } from "./Rich";
+import { SplitLine } from "./SplitLine";
 
 export function SectionHeading({
   id,
@@ -33,8 +34,11 @@ export function SectionHeading({
 }
 
 /**
- * The split (design system > Vormtaal): a 1px vertical line through the middle of the page.
- * Headings sit right against it on the left; content starts right of it. Stacks on small screens.
+ * The split (design system > Vormtaal): two columns around the middle of the page. Headings sit
+ * right-aligned against the midline; content starts right of it. Stacks on small screens.
+ *
+ * The 1px line itself is opt-in (`line`): use it only where the split carries meaning, so it stays
+ * a signature instead of decoration. When shown, it draws itself once on scroll into view.
  */
 export function Split({
   left,
@@ -42,18 +46,20 @@ export function Split({
   tone = "dark",
   className = "",
   align = "start",
+  line = false,
 }: {
   left: ReactNode;
   right?: ReactNode;
   tone?: "dark" | "light" | "accent";
   className?: string;
   align?: "start" | "center" | "end";
+  line?: boolean;
 }) {
-  const line = tone === "dark" ? "bg-cream/25" : "bg-navy/30";
+  const lineColor = tone === "dark" ? "bg-cream/25" : "bg-navy/30";
   const items = align === "center" ? "lg:items-center" : align === "end" ? "lg:items-end" : "lg:items-start";
   return (
     <div className={`relative grid gap-10 lg:grid-cols-2 lg:gap-0 ${items} ${className}`}>
-      <span aria-hidden className={`absolute inset-y-0 left-1/2 hidden w-px lg:block ${line}`} />
+      {line && <SplitLine className={`absolute inset-y-0 left-1/2 hidden w-px lg:block ${lineColor}`} />}
       <div className="lg:pr-14">{left}</div>
       <div className="lg:pl-14">{right}</div>
     </div>
