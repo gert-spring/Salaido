@@ -61,7 +61,7 @@ Visual style follows the Salaido design system (2026_01_SAL_IDENTITY), which rep
 | `RESEND_API_KEY` | `re_...` | Server only. Never prefix with `NEXT_PUBLIC_`. |
 | `CONTACT_TO_EMAIL` | `hello@salaido.com` | Inbox for form submissions. Comma-separate for several. |
 | `CONTACT_FROM_EMAIL` | `Salaido website <website@mail.salaido.com>` | Must be on the verified Resend domain. |
-| `NEXT_PUBLIC_SITE_URL` | `https://salaido.com` | Canonical URL, OG image, sitemap, JSON-LD. |
+| `NEXT_PUBLIC_SITE_URL` | `https://www.salaido.com` | Canonical URL, OG image, sitemap, JSON-LD. Primary domain is www. |
 
 `.env.local` is git-ignored and must never be committed.
 
@@ -91,7 +91,7 @@ Visual style follows the Salaido design system (2026_01_SAL_IDENTITY), which rep
 4. Wait for Vercel to show the domains as valid; SSL is issued automatically.
 5. Test all four variants: `http://salaido.com`, `https://salaido.com`, `http://www.salaido.com`, `https://www.salaido.com`. All should end on the primary domain over https.
 6. Mail: if `hello@salaido.com` is used, add the Microsoft 365 MX and SPF records. Otherwise keep the null-MX / SPF / DMARC protection already advised.
-7. Update `NEXT_PUBLIC_SITE_URL` in Vercel if the primary domain is www, and redeploy.
+7. Primary domain is www (done 23 Nov 2026): `NEXT_PUBLIC_SITE_URL` must be `https://www.salaido.com` in Vercel, then redeploy.
 
 ## Accessibility and motion
 

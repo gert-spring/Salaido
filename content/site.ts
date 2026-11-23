@@ -4,7 +4,8 @@
  */
 export const site = {
   name: "Salaido",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://salaido.com",
+  // Primary domain is www (salaido.com redirects there, set in Vercel > Domains).
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.salaido.com",
 
   company: {
     legalName: "Salaido Group BV",
