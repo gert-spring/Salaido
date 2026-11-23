@@ -100,12 +100,6 @@ export const en = {
     body: "You may know us as Datalane. Based in Vught, Datalane helps large enterprises get a clear view of their processes, then automate and improve them with AI. As a Celonis Platinum Partner and Microsoft Solutions Partner, Datalane combines process mining, planning and resource optimisation, and intelligent automation in one integrated offering.",
     body2:
       "Datalane is the foundation of Salaido. Same team, same expertise, now part of a European platform for process intelligence and AI.",
-    facts: [
-      "Founded [2019, confirm: 2013 or 2019]",
-      "Vught, the Netherlands",
-      "Celonis Platinum Partner",
-      "Microsoft Solutions Partner",
-    ],
     link: { label: "Visit datalane.nl", href: "https://datalane.nl" },
   },
 

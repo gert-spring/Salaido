@@ -1,4 +1,5 @@
 import { en } from "@/content/en";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Rich } from "@/components/ui/Rich";
@@ -25,27 +26,13 @@ export function Datalane() {
               <p className="mt-6 font-serif text-xl font-semibold leading-snug text-navy sm:text-2xl">
                 <Rich text={t.body2} />
               </p>
+              {/* Primary action of this section: the way back to the name people know. */}
+              <Button href={t.link.href} variant="filled" on="light" className="mt-10">
+                {t.link.label}
+              </Button>
             </Reveal>
           }
         />
-
-        <ul className="mt-16 grid gap-x-8 lg:mt-20 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
-          {t.facts.map((fact, i) => (
-            <Reveal as="li" key={fact} delay={i * 0.06} className="border-t border-navy pt-4 text-[0.9375rem] font-medium text-navy">
-              <Rich text={fact} />
-            </Reveal>
-          ))}
-        </ul>
-
-        <a
-          href={t.link.href}
-          className="group mt-12 inline-flex items-center gap-2 text-[0.9375rem] font-medium text-navy underline decoration-red decoration-2 underline-offset-[6px]"
-        >
-          {t.link.label}
-          <span aria-hidden className="transition-transform duration-200 ease-out group-hover:translate-x-1">
-            →
-          </span>
-        </a>
       </Container>
     </section>
   );
