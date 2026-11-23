@@ -6,6 +6,16 @@ export const site = {
   name: "Salaido",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://salaido.com",
 
+  company: {
+    legalName: "Salaido Group BV",
+    kvk: "42046966",
+    street: "Hoornwerk 1",
+    postalCode: "5264 PL",
+    city: "Vught",
+    country: "The Netherlands",
+    countryCode: "NL",
+  },
+
   // Adobe Fonts kit id (e.g. "abc1def") serving IvyPresto Display + Neue Haas Grotesk Display.
   // [deliver: Salaido Adobe Fonts kit]. null = Georgia / Helvetica Neue fallback from the design system.
   adobeFontsKitId: null as string | null,
@@ -68,4 +78,7 @@ export const site = {
 export const copyTokens: Record<string, string> = {
   booth: site.event.booth,
   email: site.contactEmail,
+  legalName: site.company.legalName,
+  kvk: site.company.kvk,
+  address: `${site.company.street}, ${site.company.postalCode} ${site.company.city}, ${site.company.country}`,
 };

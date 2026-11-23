@@ -32,6 +32,12 @@ export function Footer() {
           <span className="hidden sm:inline" aria-hidden>
             ·
           </span>
+          <address className="not-italic">
+            <Rich text={t.address} />
+          </address>
+          <span className="hidden sm:inline" aria-hidden>
+            ·
+          </span>
           <a href={site.privacyUrl ?? "#privacy"} className="transition-colors hover:text-cream">
             {t.privacy}
           </a>

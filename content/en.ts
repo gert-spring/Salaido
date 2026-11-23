@@ -191,24 +191,23 @@ export const en = {
         email: "Please enter a valid email address.",
         message: "Please add a short message.",
         consent: "Please confirm so we can respond.",
-        generic: "Something went wrong. Please email us instead.",
+        generic: "Something went wrong. Please try again in a moment.",
       },
     },
-    orEmail: "Or email",
-    email: "{email}",
   },
 
   // 11.10
   footer: {
     companyLine: "Datalane is a Salaido company",
     copyright: "© 2026 Salaido",
+    address: "{legalName} · {address}",
     privacy: "Privacy",
     // Privacy statement (general). Have it checked before go-live. Processors: Vercel (hosting,
     // analytics) and Resend (email), both US-based, DPF-certified, SCCs in their DPAs (checked 23 Nov 2026).
     privacyStatement: {
       heading: "Privacy statement",
       paragraphs: [
-        "Salaido Group BV (Chamber of Commerce number 42046966) is responsible for the personal data processed through this website.",
+        "{legalName} (Chamber of Commerce number {kvk}) is responsible for the personal data processed through this website.",
         "We only use the details you share with us to respond to your request and to follow up on it. We do this with your consent, which you can withdraw at any time.",
         "We do not sell your details. We share them only with trusted service providers that support this website, such as hosting and email delivery. Some of these providers are based in the United States; those transfers are covered by the EU-U.S. Data Privacy Framework and the European Commission's standard contractual clauses.",
         "We keep your details no longer than necessary, and at most 12 months.",
