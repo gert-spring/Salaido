@@ -1,1 +1,130 @@
 @import "tailwindcss";
+
+/*
+ * Design tokens (BUILD_PLAN section 6). Identity is still in draft with Futurama:
+ * change a value here and it updates everywhere (Tailwind utilities + CSS variables).
+ */
+@theme {
+  --color-ink: #050507;
+  --color-ink-2: #0b0b12;
+  --color-paper: #fcfcfb;
+  --color-paper-2: #f3f4f6;
+  --color-cyan: #8ed9ec;
+  --color-blue: #1747d1;
+  --color-mist: #c9ced9;
+  --color-slate: #8e95a5;
+  --color-graphite: #2b2e37;
+  /* Review flag for [placeholders]; not a brand colour. */
+  --color-flag: #f5b84b;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --tracking-eyebrow: 0.2em;
+}
+
+@theme inline {
+  --font-serif: var(--font-source-serif), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-ink);
+    color: var(--color-mist);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: var(--color-cyan);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  .on-light :focus-visible {
+    outline-color: var(--color-blue);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Visible flag for open points written as [like this] in content. */
+.ph {
+  background: color-mix(in oklab, var(--color-flag) 18%, transparent);
+  outline: 1px dashed var(--color-flag);
+  outline-offset: 1px;
+  border-radius: 3px;
+  padding: 0 0.2em;
+  font-weight: inherit;
+}
+
+/* Hero entrance: CSS, so it runs off the main thread during first load. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.rise {
+  animation: rise 700ms var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 70ms + 80ms);
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fade 1200ms var(--ease-out) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: fade 300ms ease both;
+  }
+  .fade-in {
+    animation: none;
+  }
+}
+
+/* Pressable feedback (emil-design-eng). */
+.press {
+  transition:
+    transform 160ms var(--ease-out),
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+.press:active {
+  transform: scale(0.97);
+}
