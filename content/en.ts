@@ -40,7 +40,6 @@ export const en = {
   hero: {
     eyebrow: "Process Intelligence & AI partner",
     heading: "Imagine **better**",
-    tagline: "Process beyond imagination.",
     tag: "Home of Datalane, Celonis Platinum Partner",
     intro:
       "Salaido helps European enterprises see how work really gets done, and puts AI to work on it.",
@@ -51,6 +50,9 @@ export const en = {
   // 11.2 On the page this block is now the 60-second brand intro video; the heading stays for
   // screen readers and search, the body is kept for reuse.
   problem: {
+    // Brand promise, opens the brand story above the video. No closing full stop: the design
+    // system sets the tagline as "Process beyond imagination" (sentence case, no punctuation).
+    promise: "Process **beyond imagination**",
     video: {
       label: "Salaido brand intro, 60 seconds",
       play: "Play the Salaido brand intro",

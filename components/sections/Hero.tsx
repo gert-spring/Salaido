@@ -49,14 +49,8 @@ export function Hero() {
         />
 
         <div className="mt-10 grid gap-8 lg:mt-14 lg:grid-cols-2 lg:gap-0">
-          <p
-            className="rise font-serif text-2xl text-cream sm:text-[1.75rem] lg:pr-14 lg:text-right"
-            style={i(2)}
-          >
-            <Rich text={t.tagline} />
-          </p>
-
-          <div className="lg:pl-14">
+          {/* The brand promise moved to open the brand story (section #why); this side stays open. */}
+          <div className="lg:col-start-2 lg:pl-14">
             {/* Section 5, place 1: the Datalane link at first glance. */}
             <p
               className="rise inline-flex items-center gap-3 text-xs font-medium uppercase tracking-eyebrow text-yellow"
