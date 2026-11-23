@@ -13,19 +13,21 @@ export function SplitHeadline({
   id,
   className = "",
   lineClassName = "bg-cream/70",
+  style,
 }: {
   text: string;
   as?: "h1" | "h2" | "h3";
   id?: string;
   className?: string;
   lineClassName?: string;
+  style?: React.CSSProperties;
 }) {
   const match = text.match(/^(.*?)\s*\*\*(.+)\*\*\s*(.*)$/);
   const left = match ? match[1] : text;
   const right = match ? `**${match[2]}**${match[3]}` : "";
 
   return (
-    <Tag id={id} className={`relative grid grid-cols-2 items-center font-serif leading-[1.25] ${className}`}>
+    <Tag id={id} style={style} className={`relative grid grid-cols-2 items-center font-serif leading-[1.25] ${className}`}>
       <span aria-hidden className={`split-draw absolute bottom-[0.08em] left-1/2 top-[0.08em] w-px ${lineClassName}`} />
       <span className="overflow-hidden whitespace-nowrap text-right">
         {/* --cut: the "e" runs behind the line and is clipped. */}
