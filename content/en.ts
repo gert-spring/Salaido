@@ -154,7 +154,7 @@ export const en = {
   // 11.7
   ambition: {
     eyebrow: "Our ambition",
-    heading: "Building Europe's leading partner for **Process Intelligence and AI**",
+    heading: "Building Europe's leading partner for **Process Intelligence, Data Engineering and AI**",
     body: "We are building a leading European platform for Process Intelligence, Data Engineering, AI execution and application modernisation, one strong local company at a time, with entrepreneurship and local presence as deliberate choices.",
     mapLabel: "Map of Europe with Salaido's focus countries highlighted",
   },
