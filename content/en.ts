@@ -198,7 +198,6 @@ export const en = {
 
   // 11.10
   footer: {
-    companyLine: "Datalane is a Salaido company",
     copyright: "© 2026 Salaido",
     address: "{legalName} · {address}",
     privacy: "Privacy",

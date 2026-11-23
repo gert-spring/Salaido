@@ -24,7 +24,6 @@ export function Footer() {
               <Logo brand="datalane" on="dark" />
             </a>
           </div>
-          <p className="text-mist">{t.companyLine}</p>
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-cream/10 pt-6 sm:flex-row sm:items-center sm:gap-5">
