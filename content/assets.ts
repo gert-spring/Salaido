@@ -3,7 +3,8 @@
  * drop the file in /public and replace `null` with { src, width, height }.
  * While a value is null the page renders a labelled placeholder.
  */
-export type Asset = { src: string; width: number; height: number } | null;
+/** position: optional CSS object-position for cropped placements, e.g. "27% center". */
+export type Asset = { src: string; width: number; height: number; position?: string } | null;
 
 export const assets = {
   salaidoLogo: {
@@ -45,7 +46,8 @@ export const assets = {
     // Cleanroom with lithography system. The full image shows ASML branding; the 4:5 card crop keeps only
     // the centre (machine), so no logos show. Keep the crop, and check usage rights before go-live.
     highTech: { src: "/industries/high-tech.webp", width: 1672, height: 941 } as Asset,
-    cpg: null as Asset,
+    // Crop focus left of centre so the shopper's face and the bottle stay in the portrait card.
+    cpg: { src: "/industries/cpg.webp", width: 1672, height: 941, position: "27% center" } as Asset,
     banking: { src: "/industries/banking.webp", width: 1672, height: 941 } as Asset,
   },
   europeMap: null as Asset, // optional, e.g. { src: "/brand/europe-map.svg", width: 1200, height: 1000 }

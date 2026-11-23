@@ -43,6 +43,7 @@ export function Industries() {
                       fill
                       sizes="(min-width: 768px) 33vw, 100vw"
                       className="-z-10 object-cover"
+                      style={{ objectPosition: photo.position ?? "center" }}
                     />
                   ) : (
                     <div className="absolute inset-0 -z-10" style={{ background: PLACEHOLDER_BG[item.key] }}>
