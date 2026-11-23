@@ -27,7 +27,7 @@ export function Datalane() {
                 <Rich text={t.body2} />
               </p>
               {/* Primary action of this section: the way back to the name people know. */}
-              <Button href={t.link.href} variant="filled" on="light" className="mt-10">
+              <Button href={t.link.href} variant="filled" on="light" accent className="mt-10">
                 {t.link.label}
               </Button>
             </Reveal>

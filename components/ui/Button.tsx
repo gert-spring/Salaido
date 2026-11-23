@@ -8,11 +8,15 @@ import type { ReactNode } from "react";
 export type ButtonVariant = "filled" | "outline";
 export type ButtonSurface = "dark" | "light";
 
-export function buttonClasses(variant: ButtonVariant = "filled", on: ButtonSurface = "dark") {
+export function buttonClasses(variant: ButtonVariant = "filled", on: ButtonSurface = "dark", accent = false) {
   const base =
     "press group/btn inline-flex items-stretch border text-left label disabled:opacity-60 disabled:pointer-events-none";
-  const look =
-    on === "dark"
+  // Accent hover: Salaido red with dark blue text (4.5:1). White on red is too low for small labels.
+  const look = accent
+    ? on === "dark"
+      ? "border-cream bg-cream text-navy hover:bg-red hover:border-red"
+      : "border-navy bg-navy text-cream hover:bg-red hover:border-red hover:text-navy"
+    : on === "dark"
       ? variant === "filled"
         ? "border-cream bg-cream text-navy hover:bg-white hover:border-white"
         : "border-cream/70 text-cream hover:border-cream hover:bg-cream/10"
@@ -44,6 +48,7 @@ export function Button({
   children,
   variant = "filled",
   on = "dark",
+  accent = false,
   className = "",
   ...rest
 }: {
@@ -51,10 +56,12 @@ export function Button({
   children: ReactNode;
   variant?: ButtonVariant;
   on?: ButtonSurface;
+  /** Red hover state, for a section's one key action. */
+  accent?: boolean;
   className?: string;
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   return (
-    <a href={href} className={`${buttonClasses(variant, on)} ${className}`} {...rest}>
+    <a href={href} className={`${buttonClasses(variant, on, accent)} ${className}`} {...rest}>
       <ButtonInner>{children}</ButtonInner>
     </a>
   );
