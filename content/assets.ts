@@ -50,5 +50,4 @@ export const assets = {
     cpg: { src: "/industries/cpg.webp", width: 1672, height: 941, position: "27% center" } as Asset,
     banking: { src: "/industries/banking.webp", width: 1672, height: 941 } as Asset,
   },
-  europeMap: null as Asset, // optional, e.g. { src: "/brand/europe-map.svg", width: 1200, height: 1000 }
 };

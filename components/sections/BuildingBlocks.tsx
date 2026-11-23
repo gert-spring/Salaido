@@ -10,7 +10,7 @@ const BLOCK = ["bg-beyond", "bg-yellow", "bg-green", "bg-red"];
 export function BuildingBlocks() {
   const t = en.blocks;
   return (
-    <section id="what-we-do" aria-labelledby="what-we-do-heading" className="border-t border-cream/10 bg-navy py-24 sm:py-32 lg:py-40">
+    <section id="what-we-do" aria-labelledby="what-we-do-heading" className="bg-navy py-24 sm:py-32 lg:py-40">
       <Container>
         <Split
           align="end"
@@ -30,7 +30,7 @@ export function BuildingBlocks() {
 
         <ol className="mt-16 grid sm:grid-cols-2 lg:mt-20 lg:grid-cols-4">
           {t.items.map((item, idx) => (
-            <Reveal as="li" key={item.number} delay={idx * 0.07} className="border-t border-cream/15 py-8 sm:pr-8 lg:border-l lg:px-8 lg:first:border-l-0 lg:first:pl-0">
+            <Reveal as="li" key={item.number} delay={idx * 0.07} className="py-8 sm:pr-8 lg:border-l lg:border-cream/15 lg:px-8 lg:first:border-l-0 lg:first:pl-0">
               <div className="flex items-center gap-3">
                 <span aria-hidden className={`h-3 w-3 ${BLOCK[idx]}`} />
                 <p className="font-serif text-lg text-cream" aria-hidden>

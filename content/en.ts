@@ -165,8 +165,7 @@ export const en = {
       show: true,
       text: '[Optional, confirm before publishing: "Want to build it with us? Let\'s talk."]',
     },
-    mapLabel: "Europe",
-    homeLabel: "Vught, NL",
+    mapLabel: "Map of Europe with Salaido's focus countries highlighted",
   },
 
   // 11.8
@@ -218,7 +217,6 @@ export const en = {
   // Labels for placeholder visuals (section 7). Shown only until real assets are in content/assets.ts.
   placeholders: {
     eyeHero: "Eye hero image (placeholder)",
-    europeMap: "Map of Europe (placeholder)",
     industryPhoto: "photo (placeholder)",
     logo: "logo placeholder",
     logoShort: "logo",

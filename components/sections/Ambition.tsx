@@ -8,7 +8,7 @@ import { EuropeMap } from "@/components/visuals/EuropeMap";
 export function Ambition() {
   const t = en.ambition;
   return (
-    <section id="ambition" aria-labelledby="ambition-heading" className="border-t border-cream/10 bg-navy py-24 sm:py-32 lg:py-40">
+    <section id="ambition" aria-labelledby="ambition-heading" className="bg-navy py-24 sm:py-32 lg:py-40">
       <Container>
         <Split
           align="center"

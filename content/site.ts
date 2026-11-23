@@ -25,6 +25,34 @@ export const site = {
     location: "Vught, the Netherlands",
   },
 
+  // Ambition map (Europe). ISO 3166-1 numeric codes, as used by the world-atlas map data.
+  map: {
+    // Darkest / brightest tier: core focus countries.
+    focus: [
+      "372", // Ireland
+      "826", // United Kingdom
+      "578", // Norway
+      "752", // Sweden
+      "246", // Finland
+      "208", // Denmark
+      "528", // Netherlands
+      "276", // Germany
+      "756", // Switzerland
+      "040", // Austria
+    ],
+    // Middle tier: next countries.
+    next: [
+      "056", // Belgium
+      "442", // Luxembourg
+      "250", // France
+      "724", // Spain
+      "620", // Portugal
+      "380", // Italy
+      "616", // Poland
+      "203", // Czechia
+    ],
+  },
+
   event: {
     name: "Celosphere 2026",
     venue: "Messe München",

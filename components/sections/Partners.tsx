@@ -11,7 +11,7 @@ export function Partners() {
   return (
     <section id="partners" aria-labelledby="partners-heading" className="on-light bg-cream pb-24 text-graphite sm:pb-32 lg:pb-40">
       <Container>
-        <div className="border-t border-navy/15 pt-24 sm:pt-32 lg:pt-40">
+        <div className="pt-24 sm:pt-32 lg:pt-40">
           <Split
             tone="light"
             left={
