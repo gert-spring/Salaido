@@ -7,7 +7,8 @@ export function GET() {
   return new Response(buildEuropeMapSvg(), {
     headers: {
       "Content-Type": "image/svg+xml",
-      "Cache-Control": "public, max-age=86400, stale-while-revalidate=604800",
+      // The page requests it with ?v=<content hash>, so it can be cached hard.
+      "Cache-Control": "public, max-age=31536000, immutable",
     },
   });
 }

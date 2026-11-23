@@ -3,6 +3,7 @@
 import { useActionState, useEffect, useRef, useState } from "react";
 import { submitContact } from "@/app/actions/contact";
 import { en } from "@/content/en";
+import { site } from "@/content/site";
 import { initialContactState, type ContactField } from "@/lib/contact";
 import { Rich } from "@/components/ui/Rich";
 import { PREFILL_EVENT } from "@/components/ui/PrefillLink";
@@ -154,6 +155,14 @@ export function ContactForm() {
             <Rich text={t.consent} />
           </span>
         </label>
+        {site.privacyUrl && (
+          <a
+            href={site.privacyUrl}
+            className="ml-7 mt-1 inline-block text-sm text-mist underline decoration-cream/40 underline-offset-4 hover:decoration-cream"
+          >
+            {t.privacyLink}
+          </a>
+        )}
         {err("consent") && (
           <p id="contact-consent-error" className="mt-2 text-sm text-error">
             {t.errors.consent}

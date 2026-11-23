@@ -18,11 +18,6 @@ export function Ambition() {
               <p className="mt-8 text-lg leading-relaxed text-mist lg:ml-auto lg:max-w-lg">
                 <Rich text={t.body} />
               </p>
-              {t.joinLine.show && (
-                <p className="mt-8 font-serif text-xl text-cream lg:ml-auto lg:max-w-lg">
-                  <Rich text={t.joinLine.text} />
-                </p>
-              )}
             </Reveal>
           }
           right={

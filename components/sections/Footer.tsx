@@ -32,15 +32,9 @@ export function Footer() {
           <span className="hidden sm:inline" aria-hidden>
             ·
           </span>
-          {site.privacyUrl ? (
-            <a href={site.privacyUrl} className="transition-colors hover:text-cream">
-              Privacy
-            </a>
-          ) : (
-            <p>
-              <Rich text={t.privacy} />
-            </p>
-          )}
+          <a href={site.privacyUrl ?? "#privacy"} className="transition-colors hover:text-cream">
+            {t.privacy}
+          </a>
           <span className="hidden sm:inline" aria-hidden>
             ·
           </span>
@@ -54,6 +48,21 @@ export function Footer() {
             </p>
           )}
         </div>
+
+        {/* Privacy statement (draft). Short enough to live here; move to /privacy if it grows. */}
+        <section id="privacy" aria-labelledby="privacy-heading" className="mt-12 max-w-3xl scroll-mt-24">
+          <h2 id="privacy-heading" className="label text-cream">
+            {t.privacyStatement.heading}
+          </h2>
+          <div className="mt-4 space-y-3 text-[0.8125rem] leading-relaxed text-slate">
+            {t.privacyStatement.paragraphs.map((p) => (
+              <p key={p}>
+                <Rich text={p} />
+              </p>
+            ))}
+            <p className="text-slate/80">{t.privacyStatement.updated}</p>
+          </div>
+        </section>
       </Container>
     </footer>
   );

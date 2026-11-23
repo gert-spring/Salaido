@@ -160,11 +160,6 @@ export const en = {
     eyebrow: "Our ambition",
     heading: "Building Europe's leading partner for **Process Intelligence and AI**",
     body: "We are building a leading European platform for Process Intelligence, Data Engineering, AI execution and application modernisation, one strong local company at a time, with entrepreneurship and local presence as deliberate choices.",
-    // Optional partner-recruitment line. Set `show: true` only after confirmation.
-    joinLine: {
-      show: true,
-      text: '[Optional, confirm before publishing: "Want to build it with us? Let\'s talk."]',
-    },
     mapLabel: "Map of Europe with Salaido's focus countries highlighted",
   },
 
@@ -188,7 +183,8 @@ export const en = {
       subjectPrefix: "Regarding",
       clearSubject: "Remove subject",
       consent:
-        "I agree that Salaido uses these details to respond to my message. [Privacy statement link]",
+        "I agree that Salaido uses these details to respond to my message.",
+      privacyLink: "Read the privacy statement",
       honeypot: "Leave this field empty",
       submit: "Send message",
       sending: "Sending",
@@ -210,7 +206,20 @@ export const en = {
   footer: {
     companyLine: "Datalane is a Salaido company",
     copyright: "© 2026 Salaido",
-    privacy: "Privacy [privacy page or short statement]",
+    privacy: "Privacy",
+    // DRAFT privacy statement. Have it checked before go-live; fill the [bracketed] facts.
+    privacyStatement: {
+      heading: "Privacy statement",
+      paragraphs: [
+        "[Legal entity name], trading as Salaido, is responsible for the personal data collected through this website. [Registered address, Chamber of Commerce number]",
+        "When you use the contact form, we use your name, company, email address and message only to answer your request and, if you ask for it, to follow up. Our legal basis is your consent, which you give with the checkbox on the form and can withdraw at any time.",
+        "We do not sell your details or use them for marketing without asking. They are shared only with the service providers that host this website (Vercel) and deliver our email (Resend), who process them on our behalf. [Confirm: these providers may process data outside the EU under standard contractual clauses.]",
+        "We keep contact requests no longer than needed to follow up, and at most [retention period, e.g. 12 months].",
+        "This website uses cookieless, anonymous visitor statistics (Vercel Web Analytics). It sets no tracking cookies and does not identify you.",
+        "You can ask to see, correct or delete your details, or object to their use, by emailing {email}. You can also lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens).",
+      ],
+      updated: "Last updated: 23 November 2026",
+    },
     linkedin: "LinkedIn",
   },
 

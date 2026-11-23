@@ -16,8 +16,8 @@ export const site = {
   // [deliver] Set to the full https://www.linkedin.com/company/... URL. null renders a placeholder.
   linkedinUrl: null as string | null,
 
-  // [privacy page or short statement]. Set to a URL (e.g. "/privacy") once it exists.
-  privacyUrl: null as string | null,
+  // Privacy statement: drafted in the footer (#privacy). Change to a page URL if it moves to its own page.
+  privacyUrl: "#privacy" as string | null,
 
   datalane: {
     name: "Datalane",
