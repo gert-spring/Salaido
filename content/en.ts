@@ -114,19 +114,16 @@ export const en = {
       {
         key: "celonis",
         name: "Celonis",
-        role: "Core",
         body: "Process intelligence and the process context that makes AI reliable.",
       },
       {
         key: "microsoft",
         name: "Microsoft",
-        role: "Accelerator",
         body: "Fabric as data platform and Microsoft AI services.",
       },
       {
         key: "databricks",
         name: "Databricks",
-        role: "Accelerator",
         body: "Data platform and AI for data-intensive organisations.",
       },
     ],

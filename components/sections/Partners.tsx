@@ -1,12 +1,11 @@
 import { en } from "@/content/en";
 import { Container } from "@/components/ui/Container";
 import { PartnerLogo } from "@/components/ui/PartnerLogo";
-import { Pill } from "@/components/ui/Pill";
 import { Reveal } from "@/components/ui/Reveal";
 import { Rich } from "@/components/ui/Rich";
 import { SectionHeading, Split } from "@/components/ui/SectionHeading";
 
-/** Section 5, place 3: credentials shown "via Datalane", so name and credentials reinforce each other. */
+/** Partner alliances: Celonis (dark card, the core alliance), Microsoft, Databricks. */
 export function Partners() {
   const t = en.partners;
   return (
@@ -32,12 +31,8 @@ export function Partners() {
                   delay={i * 0.07}
                   className={`flex flex-col p-7 sm:p-8 ${core ? "bg-navy text-mist" : "bg-white text-graphite"}`}
                 >
-                  <Pill variant={core ? "blue" : "outline"} className="self-start">
-                    {p.role}
-                  </Pill>
-
                   {/* The logo is the card title; the name stays available to screen readers via alt text. */}
-                  <h3 className="mt-10 flex h-12 items-center">
+                  <h3 className="flex h-12 items-center">
                     <PartnerLogo partner={p.key} name={p.name} on={core ? "dark" : "light"} />
                   </h3>
 
