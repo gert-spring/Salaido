@@ -25,7 +25,7 @@ export function Problem() {
             <Rich text={t.promise} boldClassName="font-bold" />
           </h2>
         </Reveal>
-        <Reveal delay={0.08}>
+        <Reveal delay={0.08} className="mt-12 sm:mt-16 lg:mt-20">
           <BrandVideo src={src} labels={t.video} stillAt={assets.video.brandIntroStillAt} />
         </Reveal>
       </Container>
