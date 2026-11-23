@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Rich } from "@/components/ui/Rich";
 import { SectionHeading, Split } from "@/components/ui/SectionHeading";
 
-/** Partner alliances: Celonis (dark card, the core alliance), Microsoft, Databricks. */
+/** Partner alliances: Celonis, Microsoft, Databricks, each on an equal white card. */
 export function Partners() {
   const t = en.partners;
   return (
@@ -23,17 +23,16 @@ export function Partners() {
 
           <ul className="mt-16 grid gap-4 lg:mt-20 lg:grid-cols-3">
             {t.items.map((p, i) => {
-              const core = i === 0;
               return (
                 <Reveal
                   as="li"
                   key={p.key}
                   delay={i * 0.07}
-                  className={`flex flex-col p-7 sm:p-8 ${core ? "bg-navy text-mist" : "bg-white text-graphite"}`}
+                  className="flex flex-col bg-white p-7 text-graphite sm:p-8"
                 >
                   {/* The logo is the card title; the name stays available to screen readers via alt text. */}
                   <h3 className="flex h-12 items-center">
-                    <PartnerLogo partner={p.key} name={p.name} on={core ? "dark" : "light"} />
+                    <PartnerLogo partner={p.key} name={p.name} on="light" />
                   </h3>
 
                   <p className="mt-6 leading-relaxed">

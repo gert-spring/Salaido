@@ -65,7 +65,7 @@ export const en = {
 
   // 11.3
   blocks: {
-    eyebrow: "What we do: four building blocks",
+    eyebrow: "Four building blocks",
     heading: "From data to **AI execution**",
     items: [
       {
