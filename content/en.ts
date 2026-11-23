@@ -91,7 +91,7 @@ export const en = {
         partners: "Microsoft, Celonis",
       },
     ],
-    closing: "Start with one building block. Grow into the next.",
+    closing: "Each block makes the next one stronger. Together, they turn **insight into action**.",
   },
 
   // 11.4 + section 5
