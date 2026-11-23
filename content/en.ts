@@ -149,8 +149,8 @@ export const en = {
       {
         key: "banking",
         label: "Banking",
-        headline: "Imagine **[headline]**.",
-        line: "[one line]",
+        headline: "Imagine **effortless compliance**.",
+        line: "Where regulation never slows you down.",
       },
     ],
   },
