@@ -15,6 +15,7 @@ export function Celosphere() {
       <Container className="py-20 sm:py-24 lg:py-28">
         <Reveal>
           <Split
+            line
             tone="accent"
             align="end"
             left={<SectionHeading id="celosphere-heading" eyebrow={t.eyebrow} heading={t.heading} tone="accent" split />}

@@ -12,6 +12,7 @@ export function Contact() {
     <section id="contact" aria-labelledby="contact-heading" className="relative bg-navy py-24 sm:py-32 lg:py-40">
       <Container>
         <Split
+          line
           left={
             <Reveal className="lg:text-right">
               <SectionHeading id="contact-heading" eyebrow={t.eyebrow} heading={t.heading} split />

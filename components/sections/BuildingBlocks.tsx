@@ -13,6 +13,7 @@ export function BuildingBlocks() {
     <section id="what-we-do" aria-labelledby="what-we-do-heading" className="bg-navy pb-24 pt-10 sm:pb-32 sm:pt-12 lg:pb-40 lg:pt-16">
       <Container>
         <Split
+          line
           align="end"
           left={
             <Reveal>
