@@ -44,9 +44,6 @@ export function BuildingBlocks() {
               <p className="mt-3 leading-relaxed text-mist">
                 <Rich text={item.body} />
               </p>
-              <p className="mt-6 text-xs font-medium uppercase tracking-eyebrow text-slate">
-                <Rich text={item.partners} />
-              </p>
             </Reveal>
           ))}
         </ol>
