@@ -8,12 +8,14 @@ import { Industries } from "@/components/sections/Industries";
 import { Ambition } from "@/components/sections/Ambition";
 import { Celosphere } from "@/components/sections/Celosphere";
 import { Contact } from "@/components/sections/Contact";
+import { JsonLd } from "@/components/JsonLd";
 import { Footer } from "@/components/sections/Footer";
 
 // Section order follows BUILD_PLAN section 4.
 export default function Home() {
   return (
     <>
+      <JsonLd />
       <Header />
       <main id="main">
         <Hero />
