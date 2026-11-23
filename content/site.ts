@@ -23,8 +23,7 @@ export const site = {
   // [deliver: e.g. hello@salaido.com, which needs a mailbox, see BUILD_PLAN section 9]
   contactEmail: "[address]",
 
-  // [deliver] Set to the full https://www.linkedin.com/company/... URL. null renders a placeholder.
-  linkedinUrl: null as string | null,
+  linkedinUrl: "https://www.linkedin.com/company/salaido/" as string | null,
 
   // Privacy statement: drafted in the footer (#privacy). Change to a page URL if it moves to its own page.
   privacyUrl: "#privacy" as string | null,
