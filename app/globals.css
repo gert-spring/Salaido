@@ -1,31 +1,49 @@
 @import "tailwindcss";
 
 /*
- * Design tokens (BUILD_PLAN section 6). Identity is still in draft with Futurama:
- * change a value here and it updates everywhere (Tailwind utilities + CSS variables).
+ * Design tokens, from the Salaido design system (2026_01_SAL_IDENTITY, via the "Salaido" design
+ * system artifact). Change a value here and it updates everywhere.
+ *
+ * Contrast rules from the system: yellow takes dark blue text, never white; red as text only from
+ * 24px; beyond blue is too light for small text on cream, so small text on light stays dark blue.
  */
 @theme {
-  --color-ink: #050507;
-  --color-ink-2: #0b0b12;
-  --color-paper: #fcfcfb;
-  --color-paper-2: #f3f4f6;
-  --color-cyan: #8ed9ec;
-  --color-blue: #1747d1;
-  --color-mist: #c9ced9;
-  --color-slate: #8e95a5;
-  --color-graphite: #2b2e37;
-  /* Review flag for [placeholders]; not a brand colour. */
-  --color-flag: #f5b84b;
+  /* Core palette */
+  --color-navy: #101e35; /* salaido-dark-blue: dark surfaces, text on cream */
+  --color-navy-2: #16294a; /* surface-card in the dark theme */
+  --color-cream: #f5f3ed; /* salaido-cream: light surface, text on dark blue */
+  --color-yellow: #ffc629; /* vibrant accent on dark blue */
+  --color-red: #f13d57; /* accent, dots, active */
+  --color-green: #00a875;
+  --color-beyond: #006dff; /* beyond blue: digital accent, focus */
+  --color-purple: #713cdb;
+  --color-logo-black: #00000a;
+
+  /* Derived text tones */
+  --color-mist: #d6d8dd; /* body text on dark blue */
+  --color-slate: #a3abba; /* secondary text on dark blue (7:1) */
+  --color-graphite: #3a4459; /* body text on cream */
+
+  /* Review flag for [placeholders]; deliberately not a brand colour. */
+  --color-flag: #ff5fd2;
+  --color-error: #ff8a9a; /* readable error text on dark blue */
 
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 
-  --tracking-eyebrow: 0.2em;
+  --tracking-label: 0.04em;
+  --tracking-eyebrow: 0.12em;
 }
 
+/*
+ * IvyPresto (display) and Neue Haas Grotesk (text) are commercial fonts served by Salaido's
+ * Adobe Fonts kit (set adobeFontsKitId in content/site.ts). Without the kit the design system
+ * falls back to Georgia and Helvetica Neue.
+ */
 @theme inline {
-  --font-serif: var(--font-source-serif), ui-serif, Georgia, serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "ivypresto-display", "IvyPresto Display", Georgia, "Times New Roman", serif;
+  --font-sans: "neue-haas-grotesk-display", "Neue Haas Grotesk Display", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
 }
 
 @layer base {
@@ -35,7 +53,7 @@
     -webkit-text-size-adjust: 100%;
   }
   body {
-    background: var(--color-ink);
+    background: var(--color-navy);
     color: var(--color-mist);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -53,16 +71,15 @@
     text-wrap: pretty;
   }
   ::selection {
-    background: var(--color-cyan);
-    color: var(--color-ink);
+    background: var(--color-yellow);
+    color: var(--color-navy);
   }
   :focus-visible {
-    outline: 2px solid var(--color-cyan);
+    outline: 2px solid var(--color-yellow);
     outline-offset: 3px;
-    border-radius: 4px;
   }
   .on-light :focus-visible {
-    outline-color: var(--color-blue);
+    outline-color: var(--color-beyond);
   }
 }
 
@@ -74,12 +91,21 @@
 
 /* Visible flag for open points written as [like this] in content. */
 .ph {
-  background: color-mix(in oklab, var(--color-flag) 18%, transparent);
+  background: color-mix(in oklab, var(--color-flag) 16%, transparent);
   outline: 1px dashed var(--color-flag);
   outline-offset: 1px;
-  border-radius: 3px;
   padding: 0 0.2em;
   font-weight: inherit;
+}
+
+/* Labels on buttons and pills: always capitals (design system `label`). */
+.label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
 }
 
 /* Hero entrance: CSS, so it runs off the main thread during first load. */
@@ -106,13 +132,27 @@
   }
 }
 .fade-in {
-  animation: fade 1200ms var(--ease-out) both;
+  animation: fade 1400ms var(--ease-out) both;
+}
+/* The split: the 1px line draws from the centre outwards. */
+@keyframes split-draw {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.split-draw {
+  transform-origin: center;
+  animation: split-draw 1100ms var(--ease-out) both;
 }
 @media (prefers-reduced-motion: reduce) {
   .rise {
     animation: fade 300ms ease both;
   }
-  .fade-in {
+  .fade-in,
+  .split-draw {
     animation: none;
   }
 }

@@ -5,6 +5,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react
 import { en } from "@/content/en";
 import { Logo } from "@/components/ui/Logo";
 import { Rich, plain } from "@/components/ui/Rich";
+import { Pill } from "@/components/ui/Pill";
 
 /**
  * DatalaneDiagram (BUILD_PLAN section 5).
@@ -62,7 +63,7 @@ export function DatalaneDiagram() {
     const rects = cards.map((c) => layoutBox(c, frame));
     // Row layout when the cards sit side by side; stacked spine otherwise.
     const row = rects.length > 1 ? Math.abs(rects[0].top - rects[1].top) < 4 : f.width >= 768;
-    const r = 14;
+    const r = 0; // Salaido is angular: right-angle turns, no rounding.
 
     let start: [number, number];
     let branches: Branch[];
@@ -124,12 +125,12 @@ export function DatalaneDiagram() {
     <figure aria-label={plain(t.label)} className="relative">
       <div
         ref={frameRef}
-        className="relative overflow-hidden rounded-[28px] bg-ink px-5 py-8 sm:px-10 sm:py-12 lg:px-14 lg:py-16"
+        className="relative overflow-hidden bg-navy px-5 py-8 sm:px-10 sm:py-12 lg:px-14 lg:py-16"
       >
         {/* Subtle grid: the systems a process runs across. */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-[0.07] [background-image:linear-gradient(to_right,#C9CED9_1px,transparent_1px),linear-gradient(to_bottom,#C9CED9_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"
+          className="pointer-events-none absolute inset-0 opacity-[0.07] [background-image:linear-gradient(to_right,#F5F3ED_1px,transparent_1px),linear-gradient(to_bottom,#F5F3ED_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"
         />
 
         {geo && (
@@ -143,7 +144,7 @@ export function DatalaneDiagram() {
               <motion.path
                 key={`next-${i}`}
                 d={b.d}
-                stroke="#8ED9EC"
+                stroke="#FFC629"
                 strokeWidth={1.25}
                 strokeDasharray="4 6"
                 strokeLinecap="round"
@@ -153,20 +154,20 @@ export function DatalaneDiagram() {
             {geo.branches[0] && (
               <motion.path
                 d={geo.branches[0].d}
-                stroke="#8ED9EC"
+                stroke="#FFC629"
                 strokeWidth={2.25}
                 strokeLinecap="round"
-                strokeLinejoin="round"
+                strokeLinejoin="miter"
                 {...anim({ pathLength: 1, opacity: 1 }, { pathLength: 0, opacity: 0 }, 0.1, DRAW_MS)}
               />
             )}
-            <circle cx={geo.start[0]} cy={geo.start[1]} r={4} fill="#8ED9EC" />
+            <circle cx={geo.start[0]} cy={geo.start[1]} r={4} fill="#FFC629" />
             {geo.branches[0] && (
               <motion.circle
                 cx={geo.branches[0].end[0]}
                 cy={geo.branches[0].end[1]}
                 r={4}
-                fill="#8ED9EC"
+                fill="#FFC629"
                 {...anim({ opacity: 1 }, { opacity: 0 }, DRAW_MS, 0.2)}
               />
             )}
@@ -177,7 +178,7 @@ export function DatalaneDiagram() {
         <div className="relative flex md:justify-center">
           <div
             ref={salaidoRef}
-            className="flex flex-col items-start gap-3 rounded-2xl border border-paper/12 bg-ink-2 px-6 py-5 md:items-center md:px-8 md:text-center"
+            className="flex flex-col items-start gap-3 border border-cream/12 bg-navy-2 px-6 py-5 md:items-center md:px-8 md:text-center"
           >
             <Logo brand="salaido" on="dark" />
             <p className="max-w-[16rem] text-sm leading-snug text-mist">
@@ -196,7 +197,7 @@ export function DatalaneDiagram() {
             ref={(el) => {
               cardRefs.current[0] = el;
             }}
-            className="rounded-2xl bg-paper p-6 text-ink shadow-[0_0_0_1px_rgba(142,217,236,0.5),0_20px_60px_-20px_rgba(142,217,236,0.35)] sm:p-7"
+            className="border-t-4 border-yellow bg-white p-6 text-navy sm:p-7"
             {...anim({ opacity: 1, y: 0 }, { opacity: 0, y: 14 }, DRAW_MS * 0.85, 0.55)}
           >
             <h3 className="sr-only">Datalane</h3>
@@ -206,11 +207,10 @@ export function DatalaneDiagram() {
             </p>
             <ul className="mt-5 flex flex-wrap gap-2">
               {t.badges.map((b) => (
-                <li
-                  key={b}
-                  className="rounded-full border border-blue/25 bg-blue/[0.06] px-3 py-1 text-xs font-medium text-blue"
-                >
-                  <Rich text={b} />
+                <li key={b}>
+                  <Pill variant="outline">
+                    <Rich text={b} />
+                  </Pill>
                 </li>
               ))}
             </ul>
@@ -223,7 +223,7 @@ export function DatalaneDiagram() {
               ref={(el) => {
                 cardRefs.current[i + 1] = el;
               }}
-              className="flex min-h-[7.5rem] items-center justify-center rounded-2xl border border-dashed border-paper/25 p-6 text-sm text-slate md:min-h-0"
+              className="flex min-h-[7.5rem] items-center justify-center border border-dashed border-cream/25 p-6 text-sm text-slate md:min-h-0"
               {...anim({ opacity: 0.75 }, { opacity: 0 }, DRAW_MS + 0.45 + i * 0.12, 0.6)}
             >
               <Rich text={t.nextCompany} />

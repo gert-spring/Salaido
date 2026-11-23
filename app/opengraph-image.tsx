@@ -38,7 +38,7 @@ export default async function OpengraphImage() {
 
   return new ImageResponse(
     (
-      <div style={{ width: "100%", height: "100%", display: "flex", background: "#050507", position: "relative" }}>
+      <div style={{ width: "100%", height: "100%", display: "flex", background: "#101E35", position: "relative" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={eyeSrc} alt="" width={1120} height={630} style={{ position: "absolute", right: -260, top: 0, objectFit: "cover" }} />
         <div
@@ -49,18 +49,18 @@ export default async function OpengraphImage() {
             width: 1200,
             height: 630,
             display: "flex",
-            background: "linear-gradient(90deg, #050507 0%, #050507 38%, rgba(5,5,7,0.2) 75%, rgba(5,5,7,0) 100%)",
+            background: "linear-gradient(90deg, #101E35 0%, #101E35 38%, rgba(16,30,53,0.2) 75%, rgba(16,30,53,0) 100%)",
           }}
         />
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 72, position: "relative" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={logoSrc} alt="" width={210} height={66} />
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <div style={{ display: "flex", fontFamily: "Serif", fontSize: 120, color: "#FCFCFB", lineHeight: 1, letterSpacing: -3 }}>
+            <div style={{ display: "flex", fontFamily: "Serif", fontSize: 120, color: "#FFFFFF", lineHeight: 1, letterSpacing: -3 }}>
               <span>Imagine&nbsp;</span>
               <span style={{ fontWeight: 600 }}>better</span>
             </div>
-            <div style={{ display: "flex", marginTop: 28, fontSize: 22, letterSpacing: 4, color: "#8ED9EC", textTransform: "uppercase" }}>
+            <div style={{ display: "flex", marginTop: 28, fontSize: 22, letterSpacing: 4, color: "#FFC629", textTransform: "uppercase" }}>
               {en.hero.tag}
             </div>
           </div>

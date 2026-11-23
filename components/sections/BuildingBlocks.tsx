@@ -2,50 +2,54 @@ import { en } from "@/content/en";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Rich } from "@/components/ui/Rich";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SectionHeading, Split } from "@/components/ui/SectionHeading";
 
-// The top rule brightens from block 01 to 04: from data to AI execution.
-const RULE = ["border-cyan/25", "border-cyan/45", "border-cyan/70", "border-cyan"];
+// Accent blocks above each building block, one per core colour (design system: strip of small blocks).
+const BLOCK = ["bg-beyond", "bg-yellow", "bg-green", "bg-red"];
 
 export function BuildingBlocks() {
   const t = en.blocks;
   return (
-    <section
-      id="what-we-do"
-      aria-labelledby="what-we-do-heading"
-      className="border-t border-paper/10 bg-ink py-24 sm:py-32 lg:py-40"
-    >
+    <section id="what-we-do" aria-labelledby="what-we-do-heading" className="border-t border-cream/10 bg-navy py-24 sm:py-32 lg:py-40">
       <Container>
-        <Reveal>
-          <SectionHeading id="what-we-do-heading" eyebrow={t.eyebrow} heading={t.heading} className="max-w-3xl" />
-        </Reveal>
-
-        <ol className="mt-16 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4">
-          {t.items.map((item, idx) => (
-            <Reveal as="li" key={item.number} delay={idx * 0.07} className={`border-t pt-6 ${RULE[idx]}`}>
-              <p className="font-serif text-lg text-cyan" aria-hidden>
-                {item.number}
+        <Split
+          align="end"
+          left={
+            <Reveal>
+              <SectionHeading id="what-we-do-heading" eyebrow={t.eyebrow} heading={t.heading} split />
+            </Reveal>
+          }
+          right={
+            <Reveal delay={0.08}>
+              <p className="font-serif text-xl text-cream sm:text-2xl">
+                <Rich text={t.closing} />
               </p>
-              <h3 className="mt-6 font-serif text-[1.625rem] leading-tight text-paper">
+            </Reveal>
+          }
+        />
+
+        <ol className="mt-16 grid sm:grid-cols-2 lg:mt-20 lg:grid-cols-4">
+          {t.items.map((item, idx) => (
+            <Reveal as="li" key={item.number} delay={idx * 0.07} className="border-t border-cream/15 py-8 sm:pr-8 lg:border-l lg:px-8 lg:first:border-l-0 lg:first:pl-0">
+              <div className="flex items-center gap-3">
+                <span aria-hidden className={`h-3 w-3 ${BLOCK[idx]}`} />
+                <p className="font-serif text-lg text-cream" aria-hidden>
+                  {item.number}
+                </p>
+              </div>
+              <h3 className="mt-8 font-serif text-[1.625rem] font-bold leading-tight text-cream">
                 <span className="sr-only">{item.number}. </span>
                 <Rich text={item.title} />
               </h3>
               <p className="mt-3 leading-relaxed text-mist">
                 <Rich text={item.body} />
               </p>
-              <p className="mt-5 text-sm italic text-slate">
+              <p className="mt-6 text-xs font-medium uppercase tracking-eyebrow text-slate">
                 <Rich text={item.partners} />
               </p>
             </Reveal>
           ))}
         </ol>
-
-        <Reveal delay={0.2}>
-          <p className="mt-16 flex items-center gap-4 font-serif text-xl text-paper sm:text-2xl lg:mt-20">
-            <span className="h-px w-10 shrink-0 bg-cyan" aria-hidden />
-            <Rich text={t.closing} />
-          </p>
-        </Reveal>
       </Container>
     </section>
   );

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { en } from "@/content/en";
 import { Logo } from "@/components/ui/Logo";
+import { buttonClasses, ButtonInner } from "@/components/ui/Button";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,7 +35,7 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color] duration-300 ${
-        solid ? "border-paper/10 bg-ink/85 backdrop-blur-md" : "border-transparent"
+        solid ? "border-cream/10 bg-navy/85 backdrop-blur-md" : "border-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 w-full max-w-[1240px] items-center justify-between px-5 sm:px-8 lg:h-[4.5rem] lg:px-12">
@@ -46,23 +47,20 @@ export function Header() {
           <ul className="flex items-center gap-7">
             {t.items.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="text-sm text-mist transition-colors duration-200 hover:text-paper">
+                <a href={item.href} className="text-sm text-mist transition-colors duration-200 hover:text-cream">
                   {item.label}
                 </a>
               </li>
             ))}
           </ul>
-          <a
-            href={t.cta.href}
-            className="press inline-flex h-10 items-center rounded-full bg-cyan px-5 text-sm font-medium text-ink hover:bg-paper"
-          >
-            {t.cta.label}
+          <a href={t.cta.href} className={buttonClasses("outline", "dark")}>
+            <ButtonInner>{t.cta.label}</ButtonInner>
           </a>
         </nav>
 
         <button
           type="button"
-          className="press -mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full text-paper lg:hidden"
+          className="press -mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full text-cream lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? t.closeMenu : t.openMenu}
@@ -86,13 +84,13 @@ export function Header() {
       <div
         id="mobile-menu"
         hidden={!open}
-        className="h-[calc(100dvh-4rem)] overflow-y-auto border-t border-paper/10 bg-ink px-5 pb-10 pt-4 sm:px-8 lg:hidden"
+        className="h-[calc(100dvh-4rem)] overflow-y-auto border-t border-cream/10 bg-navy px-5 pb-10 pt-4 sm:px-8 lg:hidden"
       >
         <nav aria-label={`${t.label} (mobile)`}>
           <ul className="flex flex-col">
             {t.items.map((item) => (
-              <li key={item.href} className="border-b border-paper/10">
-                <a href={item.href} onClick={() => setOpen(false)} className="block py-4 font-serif text-2xl text-paper">
+              <li key={item.href} className="border-b border-cream/10">
+                <a href={item.href} onClick={() => setOpen(false)} className="block py-4 font-serif text-2xl text-cream">
                   {item.label}
                 </a>
               </li>
@@ -101,9 +99,9 @@ export function Header() {
           <a
             href={t.cta.href}
             onClick={() => setOpen(false)}
-            className="press mt-8 inline-flex h-12 w-full items-center justify-center rounded-full bg-cyan text-[0.9375rem] font-medium text-ink"
+            className={`${buttonClasses("filled", "dark")} mt-8`}
           >
-            {t.cta.label}
+            <ButtonInner>{t.cta.label}</ButtonInner>
           </a>
         </nav>
       </div>

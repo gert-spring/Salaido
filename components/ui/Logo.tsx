@@ -33,10 +33,10 @@ export function Logo({
     );
   }
 
-  const tone = on === "dark" ? "text-paper border-paper/25" : "text-ink border-ink/25";
+  const tone = on === "dark" ? "text-cream border-cream/25" : "text-navy border-navy/25";
   return (
     <span
-      className={`inline-flex items-center rounded-[4px] border border-dashed px-2 py-0.5 font-serif text-[1.375rem] leading-none tracking-[-0.01em] ${tone} ${className}`}
+      className={`inline-flex items-center border border-dashed px-2 py-0.5 font-serif text-[1.375rem] leading-none tracking-[-0.01em] ${tone} ${className}`}
       title={`${name} ${en.placeholders.logo}`}
     >
       {brand === "salaido" ? (

@@ -42,7 +42,7 @@ export function ProcessLines({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 620 360" className={className} role="presentation" aria-hidden fill="none">
       {/* Faint grid suggests the many systems a process crosses. */}
-      <g stroke="#C9CED9" strokeOpacity="0.06">
+      <g stroke="#F5F3ED" strokeOpacity="0.06">
         {Array.from({ length: 7 }, (_, i) => (
           <line key={`h${i}`} x1="0" x2="620" y1={30 + i * 50} y2={30 + i * 50} />
         ))}
@@ -52,7 +52,7 @@ export function ProcessLines({ className = "" }: { className?: string }) {
         <motion.path
           key={i}
           d={`M ${x} ${y} C ${x + 150} ${y}, ${JOIN[0] - 150} ${JOIN[1]}, ${JOIN[0]} ${JOIN[1]}`}
-          stroke="#8ED9EC"
+          stroke="#FFC629"
           strokeOpacity={0.55}
           strokeWidth={1.25}
           strokeLinecap="round"
@@ -61,18 +61,18 @@ export function ProcessLines({ className = "" }: { className?: string }) {
       ))}
       <motion.path
         d={`M ${JOIN[0]} ${JOIN[1]} L 606 ${JOIN[1]}`}
-        stroke="#8ED9EC"
+        stroke="#FFC629"
         strokeWidth={2.5}
         strokeLinecap="round"
         {...draw(0.7)}
       />
 
       {STARTS.map(([x, y], i) => (
-        <motion.circle key={`n${i}`} cx={x} cy={y} r={4.5} fill="#050507" stroke="#C9CED9" strokeOpacity={0.6} {...appear(i * 0.05)} />
+        <motion.circle key={`n${i}`} cx={x} cy={y} r={4.5} fill="#101E35" stroke="#F5F3ED" strokeOpacity={0.6} {...appear(i * 0.05)} />
       ))}
-      <motion.circle cx={JOIN[0]} cy={JOIN[1]} r={6} fill="#8ED9EC" {...appear(0.75)} />
+      <motion.circle cx={JOIN[0]} cy={JOIN[1]} r={6} fill="#FFC629" {...appear(0.75)} />
       {FLOW_NODES.map((x, i) => (
-        <motion.circle key={`f${x}`} cx={x} cy={JOIN[1]} r={4.5} fill="#050507" stroke="#8ED9EC" strokeWidth={2} {...appear(0.95 + i * 0.08)} />
+        <motion.circle key={`f${x}`} cx={x} cy={JOIN[1]} r={4.5} fill="#101E35" stroke="#FFC629" strokeWidth={2} {...appear(0.95 + i * 0.08)} />
       ))}
     </svg>
   );

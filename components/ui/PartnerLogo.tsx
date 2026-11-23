@@ -10,10 +10,10 @@ export function PartnerLogo({ partner, name, on = "light" }: { partner: PartnerK
   if (asset) {
     return <Image src={asset.src} width={asset.width} height={asset.height} alt={name} className="h-8 w-auto" />;
   }
-  const tone = on === "dark" ? "border-paper/25 text-paper" : "border-ink/25 text-ink";
+  const tone = on === "dark" ? "border-cream/25 text-cream" : "border-navy/25 text-navy";
   return (
     <span
-      className={`inline-flex h-10 items-center gap-2 rounded-md border border-dashed px-3 text-sm font-semibold tracking-tight ${tone}`}
+      className={`inline-flex h-10 items-center gap-2 border border-dashed px-3 text-sm font-semibold tracking-tight ${tone}`}
       title={`${name} ${en.placeholders.logo}`}
     >
       {name}

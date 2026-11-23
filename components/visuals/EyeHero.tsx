@@ -18,7 +18,7 @@ export function EyeHero({ className = "" }: { className?: string }) {
           fill
           priority
           sizes="(min-width: 1024px) 56vw, 120vw"
-          className="object-cover [mask-image:radial-gradient(closest-side,black_70%,transparent)]"
+          className="object-cover [mask-image:radial-gradient(closest-side,black_58%,transparent)]"
         />
       </div>
     );
@@ -45,34 +45,34 @@ export function EyeHero({ className = "" }: { className?: string }) {
       <svg viewBox="0 0 600 600" className="h-full w-full">
         <defs>
           <radialGradient id="eye-iris" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#050507" />
+            <stop offset="0%" stopColor="#101E35" />
             <stop offset="30%" stopColor="#0B1A22" />
             <stop offset="62%" stopColor="#123846" />
-            <stop offset="86%" stopColor="#0B0B12" />
-            <stop offset="100%" stopColor="#050507" stopOpacity="0" />
+            <stop offset="86%" stopColor="#101E35" />
+            <stop offset="100%" stopColor="#101E35" stopOpacity="0" />
           </radialGradient>
           <radialGradient id="eye-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="55%" stopColor="#8ED9EC" stopOpacity="0" />
-            <stop offset="80%" stopColor="#8ED9EC" stopOpacity="0.12" />
-            <stop offset="100%" stopColor="#8ED9EC" stopOpacity="0" />
+            <stop offset="55%" stopColor="#FFC629" stopOpacity="0" />
+            <stop offset="80%" stopColor="#FFC629" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#FFC629" stopOpacity="0" />
           </radialGradient>
           <linearGradient id="eye-reflect" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#FCFCFB" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#8ED9EC" stopOpacity="0.05" />
+            <stop offset="0%" stopColor="#F5F3ED" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#FFC629" stopOpacity="0.05" />
           </linearGradient>
         </defs>
 
         <circle cx="300" cy="300" r="298" fill="url(#eye-glow)" />
         <circle cx="300" cy="300" r="280" fill="url(#eye-iris)" />
-        <g stroke="#8ED9EC" strokeWidth="1" strokeLinecap="round">
+        <g stroke="#FFC629" strokeWidth="1" strokeLinecap="round">
           {fibres.map((f, i) => (
             <line key={i} x1={f.x1} y1={f.y1} x2={f.x2} y2={f.y2} strokeOpacity={f.o} />
           ))}
         </g>
-        <circle cx="300" cy="300" r="276" fill="none" stroke="#8ED9EC" strokeOpacity="0.18" />
-        <circle cx="300" cy="300" r="214" fill="none" stroke="#8ED9EC" strokeOpacity="0.08" />
+        <circle cx="300" cy="300" r="276" fill="none" stroke="#FFC629" strokeOpacity="0.18" />
+        <circle cx="300" cy="300" r="214" fill="none" stroke="#FFC629" strokeOpacity="0.08" />
         <circle cx="300" cy="300" r="92" fill="#030305" />
-        <circle cx="300" cy="300" r="92" fill="none" stroke="#8ED9EC" strokeOpacity="0.35" />
+        <circle cx="300" cy="300" r="92" fill="none" stroke="#FFC629" strokeOpacity="0.35" />
 
         {/* Data reflected in the iris: a process flow catching the light. */}
         <g opacity="0.9">
@@ -88,9 +88,9 @@ export function EyeHero({ className = "" }: { className?: string }) {
             [270, 206],
             [330, 214],
           ].map(([cx, cy]) => (
-            <circle key={cx} cx={cx} cy={cy} r="3.5" fill="#FCFCFB" fillOpacity="0.7" />
+            <circle key={cx} cx={cx} cy={cy} r="3.5" fill="#F5F3ED" fillOpacity="0.7" />
           ))}
-          <ellipse cx="266" cy="262" rx="15" ry="9" transform="rotate(-24 266 262)" fill="#FCFCFB" fillOpacity="0.14" />
+          <ellipse cx="266" cy="262" rx="15" ry="9" transform="rotate(-24 266 262)" fill="#F5F3ED" fillOpacity="0.14" />
         </g>
       </svg>
       <span className="absolute bottom-[8%] left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-dashed border-flag/60 px-3 py-1 text-[0.625rem] uppercase tracking-eyebrow text-flag/90">

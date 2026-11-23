@@ -6,6 +6,10 @@ export const site = {
   name: "Salaido",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://salaido.com",
 
+  // Adobe Fonts kit id (e.g. "abc1def") serving IvyPresto Display + Neue Haas Grotesk Display.
+  // [deliver: Salaido Adobe Fonts kit]. null = Georgia / Helvetica Neue fallback from the design system.
+  adobeFontsKitId: null as string | null,
+
   // [deliver: e.g. hello@salaido.com, which needs a mailbox, see BUILD_PLAN section 9]
   contactEmail: "[address]",
 

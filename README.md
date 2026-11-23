@@ -46,6 +46,14 @@ Drop the file in `/public/...` and replace `null` in `content/assets.ts` with `{
 
 The Salaido logos and the hero image (`helix-nebula.jpg`) come from the Salaido design system artifact (Assets > Logos, Assets > Beeld).
 
+### Design system
+
+Visual style follows the Salaido design system (2026_01_SAL_IDENTITY), which replaces the provisional tokens in BUILD_PLAN section 6:
+
+- Colours: dark blue `#101e35` and cream `#f5f3ed` surfaces, yellow as the accent on dark blue, red for dots and dashes, beyond blue / green / purple in colour blocks. Tokens live in `app/globals.css`.
+- Type: IvyPresto Display (headings) and Neue Haas Grotesk Display (text). Both are commercial: set `adobeFontsKitId` in `content/site.ts` to Salaido's Adobe Fonts kit id. Without it, visitors see the design system fallback (Georgia and Helvetica Neue). Add the production domain(s) and preview domain to the kit's allowed domains in Adobe Fonts.
+- Form language: the split (1px midline, headings right-aligned against it), square corners, rectangular buttons with a chevron box (`components/ui/Button.tsx`), round pills with a dot (`components/ui/Pill.tsx`), the "Imagine | better" split headline (`components/ui/SplitHeadline.tsx`), colour bars (`components/ui/ColorBars.tsx`).
+
 ## Environment variables
 
 | Name | Example | Notes |

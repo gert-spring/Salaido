@@ -10,14 +10,14 @@ export type ContactNotificationProps = {
 };
 
 const styles = {
-  body: { backgroundColor: "#F3F4F6", fontFamily: "Inter, Helvetica, Arial, sans-serif", margin: 0, padding: "32px 0" },
-  container: { backgroundColor: "#FCFCFB", borderRadius: "12px", margin: "0 auto", maxWidth: "560px", padding: "32px" },
-  eyebrow: { color: "#1747D1", fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase" as const, margin: 0 },
-  heading: { color: "#050507", fontFamily: "Georgia, serif", fontSize: "24px", fontWeight: 400, margin: "12px 0 0" },
+  body: { backgroundColor: "#F5F3ED", fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', margin: 0, padding: "32px 0" },
+  container: { backgroundColor: "#FFFFFF", margin: "0 auto", maxWidth: "560px", padding: "32px" },
+  eyebrow: { color: "#101E35", fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase" as const, margin: 0 },
+  heading: { color: "#101E35", fontFamily: "Georgia, serif", fontSize: "24px", fontWeight: 400, margin: "12px 0 0" },
   hr: { borderColor: "#E5E7EB", margin: "24px 0" },
-  label: { color: "#8E95A5", fontSize: "12px", margin: "0 0 2px" },
-  value: { color: "#2B2E37", fontSize: "15px", margin: "0 0 16px" },
-  message: { color: "#2B2E37", fontSize: "15px", lineHeight: "1.6", whiteSpace: "pre-wrap" as const, margin: 0 },
+  label: { color: "#5B6577", fontSize: "12px", margin: "0 0 2px" },
+  value: { color: "#101E35", fontSize: "15px", margin: "0 0 16px" },
+  message: { color: "#101E35", fontSize: "15px", lineHeight: "1.6", whiteSpace: "pre-wrap" as const, margin: 0 },
 };
 
 export default function ContactNotification({ name, company, email, message, subject, receivedAt }: ContactNotificationProps) {

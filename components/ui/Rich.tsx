@@ -21,7 +21,7 @@ function renderBrackets(text: string, keyPrefix: string): ReactNode[] {
   );
 }
 
-export function Rich({ text, boldClassName = "font-semibold" }: { text: string; boldClassName?: string }) {
+export function Rich({ text, boldClassName = "font-bold" }: { text: string; boldClassName?: string }) {
   const filled = fillTokens(text);
   return (
     <>
