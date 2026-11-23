@@ -44,7 +44,7 @@ export function ContactForm() {
         ref={statusRef}
         tabIndex={-1}
         role="status"
-        className="border border-yellow/40 bg-navy-2 p-8 font-serif text-2xl text-cream focus:outline-none sm:p-10"
+        className="success-enter border border-yellow/40 bg-navy-2 p-8 font-serif text-2xl text-cream focus:outline-none sm:p-10"
       >
         <span className="mb-5 block h-px w-10 bg-yellow" aria-hidden />
         <Rich text={t.success} />

@@ -157,6 +157,27 @@
   }
 }
 
+/* Contact form success: one-off state change, so a short entrance instead of a hard swap. */
+.success-enter {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 250ms var(--ease-out),
+    transform 250ms var(--ease-out);
+  @starting-style {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .success-enter {
+    transition: opacity 200ms ease;
+    @starting-style {
+      transform: none;
+    }
+  }
+}
+
 /* Pressable feedback (emil-design-eng). */
 .press {
   transition:

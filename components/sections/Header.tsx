@@ -35,7 +35,7 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color] duration-300 ${
-        solid ? "border-cream/10 bg-navy/85 backdrop-blur-md" : "border-transparent"
+        solid ? "border-cream/10 bg-navy/95" : "border-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 w-full max-w-[1240px] items-center justify-between px-5 sm:px-8 lg:h-[4.5rem] lg:px-12">
@@ -67,14 +67,15 @@ export function Header() {
           onClick={() => setOpen((v) => !v)}
         >
           <span className="relative block h-3 w-5" aria-hidden>
+            {/* Position and rotation both live in transform, so the bars move and turn as one motion. */}
             <span
-              className={`absolute left-0 h-px w-5 bg-current transition-transform duration-200 ease-out ${
-                open ? "top-1.5 rotate-45" : "top-0"
+              className={`absolute left-0 top-0 h-px w-5 bg-current transition-transform duration-200 ease-out ${
+                open ? "translate-y-1.5 rotate-45" : ""
               }`}
             />
             <span
-              className={`absolute left-0 h-px w-5 bg-current transition-transform duration-200 ease-out ${
-                open ? "top-1.5 -rotate-45" : "top-3"
+              className={`absolute left-0 top-3 h-px w-5 bg-current transition-transform duration-200 ease-out ${
+                open ? "-translate-y-1.5 -rotate-45" : ""
               }`}
             />
           </span>

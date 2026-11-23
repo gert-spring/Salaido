@@ -44,6 +44,7 @@ export function Hero() {
           id="hero-heading"
           text={t.heading}
           className="rise mt-6 text-[3.25rem] text-white sm:text-[5.5rem] lg:text-[8.5rem]"
+          style={i(1)}
           lineClassName="bg-cream/80"
         />
 

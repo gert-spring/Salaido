@@ -36,7 +36,7 @@ export function BrandVideo({ src, label, playLabel }: { src: string; label: stri
           aria-label={playLabel}
           className="group absolute inset-0 flex items-center justify-center bg-navy/30 transition-colors duration-200 hover:bg-navy/10"
         >
-          <span className="press flex h-20 w-20 items-center justify-center rounded-full border border-cream/80 bg-navy/60 backdrop-blur-sm transition-transform duration-200 ease-out group-hover:scale-105 group-active:scale-95 sm:h-24 sm:w-24">
+          <span className="flex h-20 w-20 items-center justify-center rounded-full border border-cream/80 bg-navy/60 backdrop-blur-sm transition-transform duration-150 ease-out group-hover:scale-105 group-active:scale-[0.97] sm:h-24 sm:w-24">
             <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7 fill-cream" aria-hidden>
               <path d="M7 4.5v15l13-7.5z" />
             </svg>

@@ -22,8 +22,16 @@ export function HeroVideo({ src, className = "" }: { src: string; className?: st
       v.pause();
       return;
     }
-    // Some browsers ignore the autoplay attribute after hydration; nudge it.
-    v.play().catch(() => {});
+    // Only decode while the hero is on screen; resume when it scrolls back in.
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) v.play().catch(() => {});
+        else v.pause();
+      },
+      { threshold: 0.05 },
+    );
+    io.observe(v);
+    return () => io.disconnect();
   }, [reduce]);
 
   return (
