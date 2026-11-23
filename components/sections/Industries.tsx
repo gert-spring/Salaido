@@ -61,10 +61,11 @@ export function Industries() {
                   <p className="text-xs font-medium uppercase tracking-eyebrow text-yellow">
                     <Rich text={item.label} />
                   </p>
-                  <h3 className="mt-4 font-serif text-[2rem] leading-[1.05] text-white">
+                  {/* Fixed two-line slots for headline and line, so labels and headlines align across cards. */}
+                  <h3 className="mt-4 min-h-[2.1em] font-serif text-[2rem] leading-[1.05] text-white">
                     <Rich text={item.headline} />
                   </h3>
-                  <p className="mt-3 text-mist">
+                  <p className="mt-3 min-h-[3em] leading-[1.5] text-mist">
                     <Rich text={item.line} />
                   </p>
                 </article>
