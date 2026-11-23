@@ -38,7 +38,6 @@ export const en = {
 
   // 11.1
   hero: {
-    eyebrow: "Process Intelligence & AI partner",
     heading: "Imagine **better**",
     tag: "Home of Datalane, Celonis Platinum Partner",
     intro:

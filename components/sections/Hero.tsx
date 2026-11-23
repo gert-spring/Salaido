@@ -31,20 +31,11 @@ export function Hero() {
       <span aria-hidden className="split-draw pointer-events-none absolute inset-y-0 left-1/2 -z-10 hidden w-px bg-cream/20 lg:block" />
 
       <Container className="flex min-h-[100svh] flex-col justify-center pb-20 pt-32 lg:pb-24 lg:pt-32">
-        <div className="grid grid-cols-2">
-          <p
-            className="rise col-start-1 pr-4 text-right text-[0.6875rem] font-medium uppercase tracking-eyebrow text-cream sm:pr-6 sm:text-xs lg:pr-8"
-            style={i(0)}
-          >
-            <Rich text={t.eyebrow} />
-          </p>
-        </div>
-
         <SplitHeadline
           id="hero-heading"
           text={t.heading}
-          className="rise mt-6 text-[3.25rem] text-white sm:text-[5.5rem] lg:text-[8.5rem]"
-          style={i(1)}
+          className="rise text-[3.25rem] text-white sm:text-[5.5rem] lg:text-[8.5rem]"
+          style={i(0)}
           lineClassName="bg-cream/80"
         />
 
@@ -54,17 +45,17 @@ export function Hero() {
             {/* Section 5, place 1: the Datalane link at first glance. */}
             <p
               className="rise inline-flex items-center gap-3 text-xs font-medium uppercase tracking-eyebrow text-yellow"
-              style={i(3)}
+              style={i(1)}
             >
               <span className="h-px w-8 shrink-0 bg-yellow" aria-hidden />
               <Rich text={t.tag} />
             </p>
 
-            <p className="rise mt-5 max-w-md text-lg leading-relaxed text-cream/90" style={i(4)}>
+            <p className="rise mt-5 max-w-md text-lg leading-relaxed text-cream/90" style={i(2)}>
               <Rich text={t.intro} />
             </p>
 
-            <div className="rise mt-8 flex flex-col items-start gap-3 sm:flex-row" style={i(5)}>
+            <div className="rise mt-8 flex flex-col items-start gap-3 sm:flex-row" style={i(3)}>
               <Button href={t.primary.href}>{t.primary.label}</Button>
               <Button href={t.secondary.href} variant="outline">
                 {t.secondary.label}
