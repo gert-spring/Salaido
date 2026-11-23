@@ -98,7 +98,7 @@ export const en = {
   datalane: {
     eyebrow: "Our roots",
     heading: "Datalane is part of **Salaido**",
-    body: "You may know us as Datalane. Based in Vught, Datalane helps large enterprises get a clear view of their processes, then automate and improve them with AI. As a Celonis Platinum Partner and Microsoft Solutions Partner, Datalane combines process mining, planning and resource optimisation, and intelligent automation in one integrated offering.",
+    body: "You may know us as Datalane. Datalane helps large enterprises get a clear view of their processes, then automate and improve them with AI. As a Celonis Platinum Partner and Microsoft Solutions Partner, Datalane combines process mining, planning and resource optimisation, and intelligent automation in one integrated offering.",
     body2:
       "Datalane is the foundation of Salaido. Same team, same expertise, now part of a European platform for process intelligence and AI.",
     link: { label: "Visit datalane.nl", href: "https://datalane.nl" },
