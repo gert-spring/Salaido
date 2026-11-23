@@ -3,7 +3,6 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Rich } from "@/components/ui/Rich";
 import { SectionHeading, Split } from "@/components/ui/SectionHeading";
-import { DatalaneDiagram } from "@/components/visuals/DatalaneDiagram";
 
 /** Section 5, place 2: the dedicated Datalane section. Cream contrast break ("Verdiepen"). */
 export function Datalane() {
@@ -30,11 +29,7 @@ export function Datalane() {
           }
         />
 
-        <div className="mt-16 lg:mt-20">
-          <DatalaneDiagram />
-        </div>
-
-        <ul className="mt-12 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-16 grid gap-x-8 lg:mt-20 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
           {t.facts.map((fact, i) => (
             <Reveal as="li" key={fact} delay={i * 0.06} className="border-t border-navy pt-4 text-[0.9375rem] font-medium text-navy">
               <Rich text={fact} />

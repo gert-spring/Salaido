@@ -4,11 +4,20 @@ import { en } from "@/content/en";
 
 type PartnerKey = keyof typeof assets.partners;
 
-/** Partner logo; a labelled outline until the file is set in content/assets.ts (check usage rules first). */
+/** Partner logo in the version for its surface; a labelled outline while no file is set in content/assets.ts. */
 export function PartnerLogo({ partner, name, on = "light" }: { partner: PartnerKey; name: string; on?: "light" | "dark" }) {
-  const asset = assets.partners[partner];
+  const set = assets.partners[partner];
+  const asset = on === "dark" ? set.onDark : set.onLight;
   if (asset) {
-    return <Image src={asset.src} width={asset.width} height={asset.height} alt={name} className="h-8 w-auto" />;
+    return (
+      <Image
+        src={asset.src}
+        width={asset.width}
+        height={asset.height}
+        alt={name}
+        className="h-9 w-auto max-w-[11rem] object-contain object-left"
+      />
+    );
   }
   const tone = on === "dark" ? "border-cream/25 text-cream" : "border-navy/25 text-navy";
   return (

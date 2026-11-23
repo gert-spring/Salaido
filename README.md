@@ -27,7 +27,7 @@ Without Resend env values the contact form still works in development: submissio
 | Colours, fonts, easing (design tokens) | `app/globals.css` (`@theme` block) |
 | Section order | `app/page.tsx` |
 | Sections | `components/sections/*` |
-| Datalane diagram | `components/visuals/DatalaneDiagram.tsx` |
+| Hero background loop / brand intro video | `public/video/*.mp4`, paths in `content/assets.ts` (`video`) |
 | Contact form logic | `app/actions/contact.ts`, `lib/contact.ts`, `components/ContactForm.tsx` |
 | Notification email | `emails/ContactNotification.tsx` |
 | SEO | `app/layout.tsx` (metadata), `components/JsonLd.tsx`, `app/opengraph-image.tsx`, `app/robots.ts`, `app/sitemap.ts` |

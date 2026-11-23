@@ -1,30 +1,28 @@
+import { assets } from "@/content/assets";
 import { en } from "@/content/en";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { Rich } from "@/components/ui/Rich";
-import { SectionHeading, Split } from "@/components/ui/SectionHeading";
-import { ProcessLines } from "@/components/visuals/ProcessLines";
+import { plain } from "@/components/ui/Rich";
+import { BrandVideo } from "@/components/visuals/BrandVideo";
 
+/**
+ * Anchor #why. Replaced (23 Nov) by the 60-second brand intro, which tells the problem story
+ * itself ("Every business runs on processes..."). The section heading remains for screen readers.
+ */
 export function Problem() {
   const t = en.problem;
+  const src = assets.video.brandIntro;
+  if (!src) return null;
+
   return (
-    <section id="why" aria-labelledby="why-heading" className="bg-navy py-24 sm:py-32 lg:py-40">
+    <section id="why" aria-labelledby="why-heading" className="bg-navy py-16 sm:py-24 lg:py-28">
+      <h2 id="why-heading" className="sr-only">
+        {plain(t.heading)}
+      </h2>
       <Container>
-        <Split
-          left={
-            <Reveal>
-              <SectionHeading id="why-heading" eyebrow={t.eyebrow} heading={t.heading} split />
-            </Reveal>
-          }
-          right={
-            <Reveal delay={0.08} className="lg:pt-10">
-              <p className="max-w-lg text-lg leading-relaxed text-mist">
-                <Rich text={t.body} />
-              </p>
-              <ProcessLines className="mt-12 w-full" />
-            </Reveal>
-          }
-        />
+        <Reveal>
+          <BrandVideo src={src} label={t.video.label} playLabel={t.video.play} />
+        </Reveal>
       </Container>
     </section>
   );

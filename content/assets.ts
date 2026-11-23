@@ -17,12 +17,28 @@ export const assets = {
   },
   // Design system (Assets > Beeld): helix-nebula.jpg, "the eye of the universe".
   // Swap for the stand's eye/iris image when Futurama delivers it.
+  // Static fallback for the hero: shown under reduced motion and until the video plays.
   eyeHero: { src: "/brand/helix-nebula.jpg", width: 1622, height: 912 } as Asset,
+  video: {
+    // Hero background loop (SALAIDO_IRIS-15.mp4).
+    heroIris: "/video/salaido-iris.mp4" as string | null,
+    // 60-second brand intro, replaces the "Why process intelligence" block.
+    brandIntro: "/video/salaido-brand-intro.mp4" as string | null,
+  },
   partners: {
-    // [deliver + check usage rules on each partner brand portal]
-    celonis: null as Asset, // e.g. { src: "/partners/celonis.svg", width: 160, height: 40 }
-    microsoft: null as Asset,
-    databricks: null as Asset,
+    // Delivered 23 Nov 2026. [check usage rules on each partner brand portal]
+    celonis: {
+      onDark: { src: "/partners/celonis-white.png", width: 593, height: 249 } as Asset,
+      onLight: { src: "/partners/celonis.png", width: 288, height: 121 } as Asset,
+    },
+    microsoft: {
+      onDark: { src: "/partners/microsoft-white.png", width: 1642, height: 351 } as Asset,
+      onLight: { src: "/partners/microsoft.png", width: 1494, height: 320 } as Asset,
+    },
+    databricks: {
+      onDark: { src: "/partners/databricks-white.png", width: 555, height: 89 } as Asset,
+      onLight: { src: "/partners/databricks.png", width: 1682, height: 266 } as Asset,
+    },
   },
   industries: {
     highTech: null as Asset, // e.g. { src: "/industries/high-tech.jpg", width: 1600, height: 1200 }

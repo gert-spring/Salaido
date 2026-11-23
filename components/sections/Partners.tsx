@@ -32,44 +32,18 @@ export function Partners() {
                   delay={i * 0.07}
                   className={`flex flex-col p-7 sm:p-8 ${core ? "bg-navy text-mist" : "bg-white text-graphite"}`}
                 >
-                  <div className="flex flex-wrap items-start justify-between gap-3">
-                    <h3 className={`font-serif text-[1.75rem] font-bold leading-none ${core ? "text-cream" : "text-navy"}`}>{p.name}</h3>
-                    <Pill variant={core ? "blue" : "outline"}>{p.role}</Pill>
-                  </div>
+                  <Pill variant={core ? "blue" : "outline"} className="self-start">
+                    {p.role}
+                  </Pill>
 
-                  <div className="mt-8">
+                  {/* The logo is the card title; the name stays available to screen readers via alt text. */}
+                  <h3 className="mt-10 flex h-12 items-center">
                     <PartnerLogo partner={p.key} name={p.name} on={core ? "dark" : "light"} />
-                  </div>
+                  </h3>
 
                   <p className="mt-6 leading-relaxed">
                     <Rich text={p.body} />
                   </p>
-
-                  <div className="mt-auto pt-8">
-                    <p className={`border-t pt-4 text-sm ${core ? "border-cream/20" : "border-navy/15"}`}>
-                      <span className={`font-medium ${core ? "text-cream" : "text-navy"}`}>
-                        <Rich text={p.credential} />
-                      </span>
-                      {p.viaDatalane && (
-                        <>
-                          {" "}
-                          <a
-                            href="#datalane"
-                            className={`font-medium underline decoration-2 underline-offset-4 ${
-                              core ? "text-yellow decoration-yellow/50" : "text-navy decoration-red"
-                            }`}
-                          >
-                            {t.viaDatalane}
-                          </a>
-                        </>
-                      )}
-                    </p>
-                    {"note" in p && p.note && (
-                      <p className="mt-3 text-xs leading-relaxed">
-                        <Rich text={p.note} />
-                      </p>
-                    )}
-                  </div>
                 </Reveal>
               );
             })}

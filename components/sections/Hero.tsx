@@ -4,6 +4,10 @@ import { Container } from "@/components/ui/Container";
 import { Rich } from "@/components/ui/Rich";
 import { SplitHeadline } from "@/components/ui/SplitHeadline";
 import { EyeHero } from "@/components/visuals/EyeHero";
+import { HeroVideo } from "@/components/visuals/HeroVideo";
+import { assets } from "@/content/assets";
+
+const heroVideo = assets.video.heroIris;
 
 /**
  * Hero, following the design system: a large circular image (the "eye") centred on the page,
@@ -15,8 +19,14 @@ export function Hero() {
 
   return (
     <section id="top" aria-labelledby="hero-heading" className="relative isolate overflow-hidden bg-navy">
-      <EyeHero className="fade-in pointer-events-none absolute left-1/2 top-[44%] -z-10 w-[150vw] -translate-x-1/2 -translate-y-1/2 sm:w-[110vw] lg:w-[min(78vw,1040px)]" />
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-navy/35" />
+      {heroVideo ? (
+        <HeroVideo src={heroVideo} className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover" />
+      ) : (
+        <EyeHero className="fade-in pointer-events-none absolute left-1/2 top-[44%] -z-10 w-[150vw] -translate-x-1/2 -translate-y-1/2 sm:w-[110vw] lg:w-[min(78vw,1040px)]" />
+      )}
+      {/* Keeps white type readable over the moving image. */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-navy/45" />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-navy to-transparent" />
       {/* The split: full height, through the centre of the eye. */}
       <span aria-hidden className="split-draw pointer-events-none absolute inset-y-0 left-1/2 -z-10 hidden w-px bg-cream/20 lg:block" />
 

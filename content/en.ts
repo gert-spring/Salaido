@@ -48,8 +48,13 @@ export const en = {
     secondary: { label: "Get in touch", href: "#contact" },
   },
 
-  // 11.2
+  // 11.2 On the page this block is now the 60-second brand intro video; the heading stays for
+  // screen readers and search, the body is kept for reuse.
   problem: {
+    video: {
+      label: "Salaido brand intro, 60 seconds",
+      play: "Play the Salaido brand intro",
+    },
     eyebrow: "Why process intelligence",
     heading: "Who actually sees **how work gets done?**",
     body: "Every business runs on processes. They cut across dozens of systems and teams. Process intelligence brings it into focus: every step, every bottleneck, and the context AI needs to act on it.",
@@ -102,49 +107,30 @@ export const en = {
       "Microsoft Solutions Partner",
     ],
     link: { label: "Visit datalane.nl", href: "https://datalane.nl" },
-    diagram: {
-      label:
-        "Diagram: Salaido, the European Process Intelligence and AI partner, with Datalane as its first company.",
-      salaidoLabel: "Salaido, European Process Intelligence & AI partner",
-      datalaneLocation: "Vught, NL",
-      badges: ["Celonis Platinum Partner", "Microsoft Solutions Partner"],
-      // [Open point 3: confirm whether to show these outline cards]
-      showNextCompanies: true,
-      nextCompany: "Next company",
-    },
   },
 
   // 11.5
   partners: {
     eyebrow: "Strategic alliances",
     heading: "Three alliances, **one proposition**",
-    viaDatalane: "via Datalane",
     items: [
       {
         key: "celonis",
         name: "Celonis",
         role: "Core",
         body: "Process intelligence and the process context that makes AI reliable.",
-        credential: "Celonis Platinum Partner",
-        viaDatalane: true,
       },
       {
         key: "microsoft",
         name: "Microsoft",
         role: "Accelerator",
         body: "Fabric as data platform and Microsoft AI services.",
-        credential: "Microsoft Solutions Partner",
-        viaDatalane: true,
       },
       {
         key: "databricks",
         name: "Databricks",
         role: "Accelerator",
         body: "Data platform and AI for data-intensive organisations.",
-        // Until the alliance is signed: no partner badge.
-        credential: "We work with Databricks",
-        viaDatalane: false,
-        note: "[Partnership status: alliance is being started. No partner badge until signed]",
       },
     ],
   },
