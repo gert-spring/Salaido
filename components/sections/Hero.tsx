@@ -42,10 +42,9 @@ export function Hero() {
           <div className="lg:col-start-2 lg:pl-14">
             {/* Section 5, place 1: the Datalane link at first glance. */}
             <p
-              className="rise inline-flex items-center gap-3 text-xs font-medium uppercase tracking-eyebrow text-yellow"
+              className="rise text-xs font-medium uppercase tracking-eyebrow text-yellow"
               style={i(1)}
             >
-              <span className="h-px w-8 shrink-0 bg-yellow" aria-hidden />
               <Rich text={t.tag} />
             </p>
 
